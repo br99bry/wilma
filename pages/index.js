@@ -89,8 +89,6 @@ function App() {
                   id="full_name_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                  </div>
                   <input
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                     id="full_name_text_input"
@@ -116,8 +114,8 @@ function App() {
                   id="mobile_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <input
                     autocomplete="tel-national"
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
@@ -197,8 +195,8 @@ function App() {
                   Giro
                 </label>
                 <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <div className=" relative flex items-center justify-between w-full">
                     <select
                       className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
@@ -248,8 +246,8 @@ function App() {
                   id="full_comer_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <input
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                     id="full_comer_text_input"
@@ -272,8 +270,8 @@ function App() {
                   id="number_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <input
                     autocomplete="tel-national"
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
