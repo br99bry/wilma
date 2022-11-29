@@ -131,7 +131,7 @@ const Contract = () => {
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                     id="email_text_input"
                     inputmode="email"
-                    name="home_policy_application[data][email]"
+                    name="email"
                     oninput="setCustomValidity('')"
                     oninvalid="this.setCustomValidity('Campo requerido')"
                     phx-debounce="250"
@@ -266,7 +266,7 @@ const Contract = () => {
                 <div className="flex items-center justify-between -mx-1 w-full">
                   <input
                     id="life_policy_application_data_gender"
-                    name="life_policy_application[data][gender]"
+                    name="local"
                     type="hidden"
                     value=""
                   />
@@ -274,7 +274,7 @@ const Contract = () => {
                     <input
                       className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                       id="gender_radio_input_propio"
-                      name="life_policy_application[data][gender]"
+                      name="propio"
                       required=""
                       type="radio"
                       value="propio"
@@ -285,7 +285,7 @@ const Contract = () => {
                     <input
                       className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                       id="gender_radio_input_arrendado"
-                      name="life_policy_application[data][gender]"
+                      name="arrendado"
                       required=""
                       type="radio"
                       value="arrendado"
@@ -314,7 +314,7 @@ const Contract = () => {
                     <select
                       className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
                       id="valor_inmueble_select_input"
-                      name="quake_policy_application[data][valor_inmueble]"
+                      name="valor_inmueble"
                       phx-debounce="250"
                       required=""
                     >
@@ -341,7 +341,7 @@ const Contract = () => {
                 <div className="flex items-center justify-between -mx-1 w-full">
                   <input
                     id="life_policy_application_data_gender"
-                    name="life_policy_application[data][gastos]"
+                    name="gastos_utilidades"
                     type="hidden"
                     value=""
                   />
@@ -393,7 +393,7 @@ const Contract = () => {
                     <select
                       className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
                       id="cobertura_select_input"
-                      name="quake_policy_application[data][cobertura]"
+                      name="valors_gastos_utilidades"
                       phx-debounce="250"
                       required=""
                     >
@@ -414,13 +414,13 @@ const Contract = () => {
               </div>
               <div className="w-full radio-box" id="ingresos_input_parent">
                 <legend className="block text-lg leading-relaxed font-semibold ">
-                  ¿Te ingresos por facturación anual son superiores a
+                  ¿Tus ingresos por facturación anual son superiores a
                   $235,000,000?
                 </legend>
                 <div className="flex items-center justify-between -mx-1 w-full">
                   <input
                     id="life_policy_application_data_gender"
-                    name="life_policy_application[data][ingresos]"
+                    name="ingresos_facturacion"
                     type="hidden"
                     value=""
                   />
@@ -461,7 +461,7 @@ const Contract = () => {
                 <div className="flex items-center justify-between -mx-1 w-full">
                   <input
                     id="life_policy_application_data_gender"
-                    name="life_policy_application[data][empleados]"
+                    name="empleados"
                     type="hidden"
                     value=""
                   />
@@ -502,7 +502,7 @@ const Contract = () => {
                 </legend>
                 <div className="flex items-center">
                   <input
-                    name="home_policy_application[data][term_conditions]"
+                    name="interes economico"
                     type="hidden"
                     value="false"
                   />
