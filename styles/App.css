@@ -3800,7 +3800,7 @@ summary::-webkit-details-marker,summary::marker {
 
 .checked\:bg-v2-super-pink-500:checked {
   --tw-bg-opacity: 1;
-  background-color: rgb(226 19 131/var(--tw-bg-opacity))
+  background-color: rgb(12 163 171/var(--tw-text-opacity))
 }
 
 .focus-within\:border-new-super-pink-500:focus-within {
@@ -3868,7 +3868,7 @@ summary::-webkit-details-marker,summary::marker {
 
 .hover\:border-v2-super-pink-500:hover {
   --tw-border-opacity: 1;
-  border-color: rgb(226 19 131/var(--tw-border-opacity))
+  border-color: rgb(12 163 171/var(--tw-text-opacity))
 }
 
 .hover\:bg-new-super-pink-100:hover {
