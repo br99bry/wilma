@@ -184,7 +184,7 @@ function App() {
                     oninput="setCustomValidity('')"
                     oninvalid="this.setCustomValidity('Campo requerido')"
                     phx-debounce="250"
-                    placeholder="chiditoPerroLoco"
+                    placeholder="********"
                     required=""
                     type="password"
                     onChange={(event) => (handleChangeValue(event))}
