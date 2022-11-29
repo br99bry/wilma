@@ -198,7 +198,7 @@ const Contract = () => {
                   className="block mb-1 text-lg font-semibold"
                   for="city_of_stories_select_input"
                 >
-                  Ciudad donde tienes un interés econmico
+                  Ciudad donde tienes un interés económico
                 </label>
                 <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
                   <div className=" relative flex items-center justify-between w-full">
