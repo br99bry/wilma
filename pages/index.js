@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from 'next/router'
 
 function App() {
@@ -9,7 +9,20 @@ function App() {
     whatsapp: '',
     password: ''
   })
-
+  
+  const numerOfStoriesSelectInput = useRef()
+  const comercial = useRef()
+  const empleados = useRef()
+  const questions = () => {
+    var selectedOption = numerOfStoriesSelectInput.current.options.selectedIndex;
+    if(selectedOption == 0 || selectedOption == 5){
+      comercial.current.classList.add('ocultar');
+      empleados.current.classList.add('ocultar');
+    }else{
+      comercial.current.classList.remove('ocultar');
+      empleados.current.classList.remove('ocultar');
+    }
+  }
   /* let option = document.querySelector('#number_of_stories_select_input');
   const comer = document.querySelector('.Comercial');
   const emple = document.querySelector('.Empleados');
@@ -209,6 +222,8 @@ function App() {
                       name="quake_policy_application[data][number_of_stories]"
                       phx-debounce="250"
                       required=""
+                      ref={numerOfStoriesSelectInput}
+                      onClick={() => (questions())}
                     >
                       <option value="" selected="">
                         Seleccionar Giro
@@ -240,7 +255,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="w-full ocultar Comercial">
+              <div className="w-full ocultar Comercial" ref={comercial}>
                 <label
                   className="block mb-1 text-lg font-semibold"
                   for="full_comer_text_input"
@@ -265,7 +280,7 @@ function App() {
                   />
                 </div>
               </div>
-              <div className="w-full ocultar Empleados">
+              <div className="w-full ocultar Empleados" ref={empleados}>
                 <label
                   className="block mb-1 text-lg font-semibold"
                   for="number_text_input"
