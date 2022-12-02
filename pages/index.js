@@ -102,9 +102,6 @@ function App() {
                   id="full_name_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                    <i className="far fa-user" aria-hidden="true"></i>
-                  </div>
                   <input
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                     id="full_name_text_input"
@@ -130,9 +127,8 @@ function App() {
                   id="mobile_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                    <i className="far fa-phone" aria-hidden="true"></i>
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <input
                     autocomplete="tel-national"
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
@@ -197,7 +193,7 @@ function App() {
                     oninput="setCustomValidity('')"
                     oninvalid="this.setCustomValidity('Campo requerido')"
                     phx-debounce="250"
-                    placeholder="chiditoPerroLoco"
+                    placeholder="********"
                     required=""
                     type="password"
                     onChange={(event) => (handleChangeValue(event))}
@@ -212,14 +208,13 @@ function App() {
                   Giro
                 </label>
                 <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                    <i className="far far fa-building" aria-hidden="true"></i>
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <div className=" relative flex items-center justify-between w-full">
                     <select
                       className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
                       id="number_of_stories_select_input"
-                      name="quake_policy_application[data][number_of_stories]"
+                      name="giro"
                       phx-debounce="250"
                       required=""
                       ref={numerOfStoriesSelectInput}
@@ -266,13 +261,12 @@ function App() {
                   id="full_comer_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                    <i className="far fa-user" aria-hidden="true"></i>
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <input
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                     id="full_comer_text_input"
-                    name="quake_policy_application[data][full_comerc]"
+                    name="nombre_comercial"
                     oninput="setCustomValidity('')"
                     phx-debounce="250"
                     placeholder=""
@@ -291,15 +285,14 @@ function App() {
                   id="number_text_input_parent"
                   className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                 >
-                  <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
-                    <i className="far fa-phone" aria-hidden="true"></i>
-                  </div>
+                  {/* <div className="flex items-center justify-center px-3 py-2 text-current opacity-50">
+                  </div> */}
                   <input
                     autocomplete="tel-national"
                     className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                     id="number_text_input"
                     inputmode="tel"
-                    name="quake_policy_application[data][number]"
+                    name="numero_empleados"
                     oninput="setCustomValidity('')"
                     phx-debounce="250"
                     phx-hook="formatPhone"
@@ -317,7 +310,6 @@ function App() {
                 onClick={() => (handleSubmit())}
               >
                 Continuar{" "}
-                <i className="px-2 far fa-arrow-right" aria-hidden="true"></i>
               </button>
             </div>
           </div>
