@@ -296,7 +296,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="propio"
-                      onClick={() => (localType(this.current.value))}
+                      onClick={() => (localType(this.value))}
                     />
                     <span className="inline-block w-full text-lg">Propio</span>
                   </label>
@@ -308,7 +308,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="arrendado"
-                      onClick={() => (localType(this.current.value))}
+                      onClick={() => (localType(this.value))}
                     />
                     <span className="inline-block w-full text-lg">
                       Arrendado
