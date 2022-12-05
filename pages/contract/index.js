@@ -282,7 +282,7 @@ const Contract = () => {
                     <input
                       className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                       id="gender_radio_input_propio"
-                      name="propio"
+                      name="tipo_local"
                       required=""
                       type="radio"
                       value="propio"
@@ -293,7 +293,7 @@ const Contract = () => {
                     <input
                       className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                       id="gender_radio_input_arrendado"
-                      name="arrendado"
+                      name="tipo_local"
                       required=""
                       type="radio"
                       value="arrendado"
