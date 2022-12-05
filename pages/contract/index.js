@@ -18,6 +18,11 @@ const Contract = () => {
     })
   }
 
+  const local = useRef()
+  const localType = () => {
+    console.log(local);
+  }
+
   const handleSubmit = () => {
   console.log('voy a enviar el siguiente registro al backend')
   const id = localStorage.getItem('idUser')
@@ -286,6 +291,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="propio"
+                      onClick={() => (localType())}
                     />
                     <span className="inline-block w-full text-lg">Propio</span>
                   </label>
@@ -297,6 +303,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="arrendado"
+                      onClick={() => (localType())}
                     />
                     <span className="inline-block w-full text-lg">
                       Arrendado
@@ -310,7 +317,7 @@ const Contract = () => {
                   *Campo requerido
                 </span>
               </div>
-              <div className="w-full local">
+              <div className="w-full local ocultar" ref={local}>
                 <label
                   className="block mb-1 text-lg font-semibold"
                   for="valor_inmueble_select_input"
