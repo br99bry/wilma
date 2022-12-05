@@ -25,6 +25,19 @@ const Contract = () => {
     }else if(value.target._wrapperState.initialValue == "arrendado"){
       local.current.classList.add('ocultar');
     }
+  };
+  const cobertura = useRef();
+  const coberturaGastos = useRef();
+  const coberturaUtilidades = useRef();
+  const coberturaType = (value) => {
+    cobertura.current.classList.remove('ocultar');
+    if(value.target._wrapperState.initialValue == "gastos"){
+      coberturaGastos.current.classList.remove('ocultar');
+      coberturaUtilidades.current.classList.add('ocultar');
+    }else if(value.target._wrapperState.initialValue == "utilidades"){
+      coberturaUtilidades.current.classList.remove('ocultar');
+      coberturaGastos.current.classList.add('ocultar');
+    }
   }
 
   const handleSubmit = () => {
@@ -372,6 +385,7 @@ const Contract = () => {
                     required=""
                     type="radio"
                     value="gastos"
+                    onClick={(event) => (coberturaType(event))}
                   />
                   <span className="inline-block w-full text-lg">
                     Gastos Fijos
@@ -385,6 +399,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="utilidades"
+                      onClick={(event) => (coberturaType(event))}
                     />
                     <span className="inline-block w-full text-lg">
                       Utilidades antes de impuestos
@@ -398,14 +413,18 @@ const Contract = () => {
                   *Campo requerido
                 </span>
               </div>
-              <div className="w-full cobertura">
+              <div className="w-full cobertura ocultar" ref={cobertura}>
                 <label
-                  className="block mb-1 text-lg font-semibold"
-                  for="cobertura_select_input"
+                  className="block mb-1 text-lg font-semibold ocultar"
+                  for="cobertura_select_input" ref={coberturaGastos}
                 >
-                  Valores de tus
-                  <span id="gastos">Gastos Fijos</span>
-                  <span id="utilidaes">Utilidades antes de impuestos</span>
+                  Valores de tus Gastos Fijos
+                </label>
+                <label
+                  className="block mb-1 text-lg font-semibold ocultar"
+                  for="cobertura_select_input" ref={coberturaUtilidades}
+                >
+                  Valores de tus Utilidades antes de impuestos
                 </label>
                 <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
                   <div className=" relative flex items-center justify-between w-full">
