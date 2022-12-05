@@ -42,7 +42,7 @@ const Contract = () => {
   }
 
   const empleados = useRef();
-  const ingresosType = () => {
+  const ingresosType = (value) => {
     if(value.target._wrapperState.initialValue == "si"){
       empleados.current.classList.remove('ocultar');
     }else if(value.target._wrapperState.initialValue == "no"){
