@@ -26,6 +26,7 @@ const Contract = () => {
       local.current.classList.add('ocultar');
     }
   };
+
   const cobertura = useRef();
   const coberturaGastos = useRef();
   const coberturaUtilidades = useRef();
@@ -37,6 +38,15 @@ const Contract = () => {
     }else if(value.target._wrapperState.initialValue == "utilidades"){
       coberturaUtilidades.current.classList.remove('ocultar');
       coberturaGastos.current.classList.add('ocultar');
+    }
+  }
+
+  const empleados = useRef();
+  const ingresosType = () => {
+    if(value.target._wrapperState.initialValue == "si"){
+      empleados.current.classList.remove('ocultar');
+    }else if(value.target._wrapperState.initialValue == "no"){
+      empleados.current.classList.add('ocultar');
     }
   }
 
@@ -470,6 +480,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="si"
+                      onClick={(event) => (ingresosType(event))}
                     />
                     <span className="inline-block w-full text-lg">Si</span>
                   </label>
@@ -481,6 +492,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="no"
+                      onClick={(event) => (ingresosType(event))}
                     />
                     <span className="inline-block w-full text-lg">No</span>
                   </label>
@@ -492,7 +504,7 @@ const Contract = () => {
                   *Campo requerido
                 </span>
               </div>
-              <div className="w-full radio-box" id="empleados_input_parent">
+              <div className="w-full radio-box empleados ocultar" ref={empleados} id="empleados_input_parent">
                 <legend className="block text-lg leading-relaxed font-semibold ">
                   ¿Cuentas con más de 100 empleados?
                 </legend>
