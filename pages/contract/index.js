@@ -20,8 +20,11 @@ const Contract = () => {
 
   const local = useRef()
   const localType = (value) => {
-    console.log('local', local);
-    console.log('value', value.target._wrapperState.initialValue);
+    if(value.target._wrapperState.initialValue == "propio"){
+      local.current.classList.remove('ocultar');
+    }else if(value.target._wrapperState.initialValue == "arrendado"){
+      local.current.classList.add('ocultar');
+    }
   }
 
   const handleSubmit = () => {
