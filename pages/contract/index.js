@@ -21,6 +21,7 @@ const Contract = () => {
 
   const local = useRef()
   const localType = (value) => {
+    console.log('local', local)
     if (value == 'propio'){
       local.current.classList.remove('ocultar');
     }else if(value == 'arrendado'){
