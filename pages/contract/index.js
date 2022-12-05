@@ -20,12 +20,8 @@ const Contract = () => {
 
   const local = useRef()
   const localType = (value) => {
-    console.log('local', local)
-    if (value == 'propio'){
-      local.current.classList.remove('ocultar');
-    }else if(value == 'arrendado'){
-
-    }
+    console.log('local', local);
+    console.log('value', value);
   }
 
   const handleSubmit = () => {
@@ -296,7 +292,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="propio"
-                      onClick={() => (localType(propio))}
+                      onClick={() => (localType(this))}
                     />
                     <span className="inline-block w-full text-lg">Propio</span>
                   </label>
@@ -308,7 +304,7 @@ const Contract = () => {
                       required=""
                       type="radio"
                       value="arrendado"
-                      onClick={() => (localType(arrendado))}
+                      onClick={() => (localType(this))}
                     />
                     <span className="inline-block w-full text-lg">
                       Arrendado
