@@ -21,7 +21,7 @@ const Contract = () => {
   const local = useRef()
   const localType = (value) => {
     console.log('local', local);
-    console.log('value', value);
+    console.log('value', value.target._wrapperState.initialValue);
   }
 
   const handleSubmit = () => {
