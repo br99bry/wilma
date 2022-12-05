@@ -20,7 +20,7 @@ const Contract = () => {
 
   const local = useRef()
   const localType = () => {
-    console.log('local', local);
+    console.log('local');
   }
 
   const handleSubmit = () => {
