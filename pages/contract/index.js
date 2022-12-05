@@ -1,3 +1,4 @@
+import { useState, useRef } from "react";
 import { useState } from "react";
 
 const Contract = () => {
@@ -20,7 +21,11 @@ const Contract = () => {
 
   const local = useRef()
   const localType = (value) => {
-    console.log('local', value);
+    if (value == 'propio'){
+      local.current.classList.remove('ocultar');
+    }else if(value == 'arrendado'){
+
+    }
   }
 
   const handleSubmit = () => {
