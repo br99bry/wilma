@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { useRouter } from 'next/router'
 
 function App() {
-  // const router = useRouter()
+  const router = useRouter()
   const [form, setForm] = useState({
     usuario: '',
     email: '',
@@ -46,7 +46,7 @@ function App() {
   }
 
   const handleSubmit = () => {
-    router.push('/contract')
+   // router.push('/contract')
   console.log('voy a enviar el siguiente registro al backend')
   fetch('http://localhost:3006/api/records', {
     method: 'POST',
