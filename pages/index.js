@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { useRouter } from 'next/router'
 
 function App() {
-  const router = useRouter()
+  // const router = useRouter()
   const [form, setForm] = useState({
     usuario: '',
     email: '',
