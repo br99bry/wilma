@@ -48,7 +48,7 @@ function App() {
   const handleSubmit = () => {
    // router.push('/contract')
   console.log('voy a enviar el siguiente registro al backend')
-  fetch('http://localhost:3006/api/records', {
+  fetch('http://137.184.7.90:1337/api/records', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
