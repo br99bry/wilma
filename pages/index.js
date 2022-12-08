@@ -334,7 +334,7 @@ function App() {
           </div>
         </form>
       </section>
-      <div class="hidden w-1/2 bg-cover md:block">
+      <div class="hidden w-1/2 bg-cover md:block fondo-uno">
       </div>
     </div>
     </div>
