@@ -74,7 +74,7 @@ const ContractForm3 = () => {
                   <div className="mb-4">
                     <h2 className="mb-2 text-xl md:text-3xl font-semibold">
                     Ya hemos registrado tus datos y apartado tu suscripción de <strong className="text-new-super-purple">Wilma </strong>para la temporada de 
-                    <strong className="text-new-super-purple">huracán 2023 </strong>
+                    <strong className="text-new-super-purple"> huracán 2023 </strong>
                     </h2>
                   </div>
                   <div className="mb-4">
