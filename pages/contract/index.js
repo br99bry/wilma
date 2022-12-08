@@ -173,7 +173,34 @@ const Contract = () => {
                           type="text"
                         />
                       </div>
-                    </div><div className="w-full">
+                    </div>
+                    <div className="w-full">
+                      <label
+                        className="block mb-1 text-lg font-semibold"
+                        for="rfc_text_input"
+                      >
+                        RFC
+                      </label>
+                      <div
+                        id="rfc_text_input_parent"
+                        className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
+                      >
+                        <input
+                          autocomplete=""
+                          className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
+                          id="rfc_text_input"
+                          inputmode="email"
+                          name="rfc"
+                          oninput="setCustomValidity('')"
+                          oninvalid="this.setCustomValidity('Campo requerido')"
+                          phx-debounce="250"
+                          required=""
+                          type="text"
+                          onChange={(event) => (handleChangeValue(event))}
+                        />
+                      </div>
+                    </div>
+                    <div className="w-full">
                       <label
                         className="block mb-1 text-lg font-semibold"
                         for="membresia_text_input"
@@ -205,32 +232,6 @@ const Contract = () => {
                               Katrina
                             </option>
                           </select>
-                      </div>
-                    </div>
-                    {/* <div className="w-full">
-                      <label
-                        className="block mb-1 text-lg font-semibold"
-                        for="rfc_text_input"
-                      >
-                        RFC
-                      </label>
-                      <div
-                        id="rfc_text_input_parent"
-                        className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
-                      >
-                        <input
-                          autocomplete=""
-                          className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
-                          id="rfc_text_input"
-                          inputmode="email"
-                          name="rfc"
-                          oninput="setCustomValidity('')"
-                          oninvalid="this.setCustomValidity('Campo requerido')"
-                          phx-debounce="250"
-                          required=""
-                          type="text"
-                          onChange={(event) => (handleChangeValue(event))}
-                        />
                       </div>
                     </div>
                     <div className="w-full">
@@ -266,7 +267,7 @@ const Contract = () => {
                             </option>
                           </select>
                       </div>
-                    </div> */}
+                    </div>
                     <div className="w-full">
                       <label
                         className="block mb-1 text-lg font-semibold"

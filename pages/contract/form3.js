@@ -48,7 +48,6 @@ const ContractForm3 = () => {
       console.error('Error:', error);
     });
 
-  localStorage.removeItem('idUser')
   }
 
   return (

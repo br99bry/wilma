@@ -25,23 +25,23 @@ const ContractForm1 = () => {
     router.push('/contract/form2')
     console.log('voy a enviar el siguiente registro al backend')
     const id = localStorage.getItem('idUser')
-  fetch(`http://137.184.7.90:1337/api/records/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({data: form}),
+    fetch(`http://137.184.7.90:1337/api/records/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({data: form}),
   })
     .then((response) => response.json())
     .then((data) => {
       console.log('Success:', data);
+      localStorage.setItem('ciudad', )
     })
     .catch((error) => {
       console.error('Error:', error);
     });
 
   localStorage.removeItem('idUser');
-  localStorage.setItem('ciudad','los cabos')
 
   }
 
