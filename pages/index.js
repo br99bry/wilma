@@ -5,9 +5,12 @@ function App() {
   const router = useRouter()
   const [form, setForm] = useState({
     usuario: '',
-    email: '',
     whatsapp: '',
-    password: ''
+    email: '',
+    password: '',
+    giro: '',
+    nameComer: '',
+    numberEmpleados:''
   })
 
   const numerOfStoriesSelectInput = useRef()
@@ -222,6 +225,7 @@ function App() {
                             required=""
                             ref={numerOfStoriesSelectInput}
                             onClick={() => (questions())}
+                            onChange={(event) => (handleChangeValue(event))}
                           >
                             <option value="" selected="">
                               Seleccionar Giro
@@ -269,11 +273,12 @@ function App() {
                         <input
                           className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                           id="full_comer_text_input"
-                          name="nombre_comercial"
+                          name="nameComer"
                           oninput="setCustomValidity('')"
                           phx-debounce="250"
                           placeholder=""
                           type="text"
+                          onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
                     </div>
@@ -295,13 +300,14 @@ function App() {
                           className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                           id="number_text_input"
                           inputmode="tel"
-                          name="numero_empleados"
+                          name="numberEmpleados"
                           oninput="setCustomValidity('')"
                           phx-debounce="250"
                           phx-hook="formatPhone"
                           placeholder=""
                           type="number"
                           min="0"
+                          onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
                     </div>

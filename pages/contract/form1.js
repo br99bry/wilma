@@ -8,10 +8,12 @@ const ContractForm1 = () => {
   const [form, setForm] = useState({
     nombre: '',
     domicilio: '',
+    email:'',
     rfc: '',
+    membresia:'',
     indemnizacion: '',
+    indemnizacionCustom:'',
     ciudad_interes: '',
-    valor_activos: '',
   })
 
   const handleChangeValue = (event) => {
@@ -140,7 +142,7 @@ const ContractForm1 = () => {
                           oninput="setCustomValidity('')"
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
-                          placeholder="Ej. juan@gmail.com"
+                          placeholder=""
                           required=""
                           type="text"
                         />
@@ -202,6 +204,9 @@ const ContractForm1 = () => {
                             </option>
                             <option value="3">
                               Katrina
+                            </option>
+                            <option value="4">
+                              Wilma
                             </option>
                           </select>
                       </div>
