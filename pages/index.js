@@ -84,7 +84,7 @@ function App() {
           <div className="w-11/12 max-w-lg py-8 mx-auto">
             <div className="mb-4">
               <h2 className="mb-2 text-xl md:text-3xl font-semibold">
-                Cotiza tu <strong className="text-new-super-purple">Seguro</strong>
+              ¡Únete a la comunidad <strong className="text-new-super-purple">Wilma!</strong>
               </h2>
               <p className="text-base leading-relaxed md:text-lg">
                 Ingresa los siguientes datos para cotizar
@@ -96,7 +96,7 @@ function App() {
                   className="block mb-1 text-lg font-semibold"
                   for="full_name_text_input"
                 >
-                  Nombre
+                  Nombre completo
                 </label>
                 <div
                   id="full_name_text_input_parent"
@@ -121,7 +121,7 @@ function App() {
                   className="block mb-1 text-lg font-semibold"
                   for="mobile_text_input"
                 >
-                  Número de Whatsapp
+                  Número de WhatsApp
                 </label>
                 <div
                   id="mobile_text_input_parent"
@@ -299,6 +299,24 @@ function App() {
                     placeholder=""
                     type="number"
                   />
+                </div>
+              </div>
+              <div className="flex flex-col cursor-pointer checkbox-field">
+                <div className="flex items-center">
+                  <input
+                    className="form-checkbox border-2 border-v3-super-gray-400 text-v2-super-pink-500 rounded-md bg-white w-5 h-5 mr-2 checked:bg-v2-super-pink-500 hover:border-v2-super-pink-500 focus:ring-v2-super-pink-500 focus:ring-v2-super-pink-500 m-0"
+                    id="term_conditions_checkbox_input"
+                    name="home_policy_application[data][term_conditions]"
+                    required=""
+                    type="checkbox"
+                    value="true"
+                  />
+                  <label
+                    for="term_conditions_checkbox_input"
+                    className="inline-block px-1 text-lg cursor-pointer"
+                  >
+                    Acepto los términos y condiciones
+                  </label>
                 </div>
               </div>
             </fieldset>
