@@ -142,7 +142,7 @@ function App() {
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
                           phx-hook="formatPhone"
-                          placeholder="10 dígitos"
+                          placeholder=""
                           required=""
                           type="text"
                           onChange={(event) => (handleChangeValue(event))}
@@ -169,7 +169,7 @@ function App() {
                           oninput="setCustomValidity('')"
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
-                          placeholder="Ej. juan@gmail.com"
+                          placeholder=""
                           required=""
                           type="email"
                           onChange={(event) => (handleChangeValue(event))}
@@ -196,7 +196,7 @@ function App() {
                           oninput="setCustomValidity('')"
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
-                          placeholder="********"
+                          placeholder=""
                           required=""
                           type="password"
                           onChange={(event) => (handleChangeValue(event))}
@@ -301,6 +301,7 @@ function App() {
                           phx-hook="formatPhone"
                           placeholder=""
                           type="number"
+                          min="0"
                         />
                       </div>
                     </div>
@@ -323,9 +324,9 @@ function App() {
                       </div>
                     </div>
                   </fieldset>
-                  <div className="flex justify-end pt-20">
+                  <div className="flex justify-center pt-20">
                     <button
-                      className="h-18 bg-v2-super-pink-500 px-16 py-4 rounded-full text-white w-full flex justify-center items-center bg-pink-500 text-2xl font-medium hover:bg-pink-800 w-full md:w-auto"
+                      className="h-18 bg-v2-super-pink-500 px-16 py-2 rounded-full text-white w-full flex justify-center items-center bg-pink-500 text-2xl font-medium hover:bg-pink-800 w-full md:w-auto"
                       phx-disable-with="..."
                       type="button"
                       onClick={() => (handleSubmit())}
