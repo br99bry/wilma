@@ -65,7 +65,7 @@ function App() {
       });
   }
   return (
-    <main class="flex flex-col justify-between min-h-screen">
+    <main className="flex flex-col justify-between min-h-screen">
       <div className="phx-connected">
         <div className="relative flex flex-col flex-1 bg-new-super-blue-100">
           <div className="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
