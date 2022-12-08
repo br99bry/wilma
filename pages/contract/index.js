@@ -79,29 +79,38 @@ const Contract = () => {
 
   localStorage.removeItem('idUser')
   }
+
+  var swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
   return (
     <main className="flex flex-col justify-between min-h-screen">
       <div className="phx-connected">
         <div className="relative flex flex-col flex-1 bg-new-super-blue-100">
           <div className="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
-              <Swiper
-                pagination={{
-                  type: "progressbar",
-                }}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-                className="mySwiper"
-              >
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
-              </Swiper>
+            <div className="swiper mySwiper">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">Slide 1</div>
+                <div className="swiper-slide">Slide 2</div>
+                <div className="swiper-slide">Slide 3</div>
+                <div className="swiper-slide">Slide 4</div>
+                <div className="swiper-slide">Slide 5</div>
+                <div className="swiper-slide">Slide 6</div>
+                <div className="swiper-slide">Slide 7</div>
+                <div className="swiper-slide">Slide 8</div>
+                <div className="swiper-slide">Slide 9</div>
+              </div>
+              <div className="swiper-button-next"></div>
+              <div className="swiper-button-prev"></div>
+              <div className="swiper-pagination"></div>
+            </div>
             <section className="flex w-full md:items-center md:justify-center md:w-1/2">
               <form
                 action="#"
