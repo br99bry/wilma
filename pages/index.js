@@ -334,6 +334,8 @@ function App() {
           </div>
         </form>
       </section>
+      <div class="hidden w-1/2 bg-cover md:block" style="background-image:url('/images/quake/quake-cover.jpg');">
+      </div>
     </div>
     </div>
   );
