@@ -84,7 +84,6 @@ const Contract = () => {
       <div className="phx-connected">
         <div className="relative flex flex-col flex-1 bg-new-super-blue-100">
           <div className="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
-            <>
               <Swiper
                 pagination={{
                   type: "progressbar",
@@ -103,7 +102,6 @@ const Contract = () => {
                 <SwiperSlide>Slide 8</SwiperSlide>
                 <SwiperSlide>Slide 9</SwiperSlide>
               </Swiper>
-            </>
             <section className="flex w-full md:items-center md:justify-center md:w-1/2">
               <form
                 action="#"
