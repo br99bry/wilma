@@ -30,6 +30,7 @@ const ContractForm3 = () => {
   }
 
   const handleSubmit = () => {
+    router.push('/contract/form4')
     console.log('voy a enviar el siguiente registro al backend')
   const id = localStorage.getItem('idUser')
   fetch(`http://137.184.7.90:1337/api/records/${id}`, {

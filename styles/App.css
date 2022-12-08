@@ -4476,3 +4476,7 @@ summary::-webkit-details-marker,summary::marker {
   background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_1.jpg');
   background-position: 50% 50%;
 }
+.fondo-final{
+  background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_final.jpg');
+  background-position: 50% 50%;
+}
