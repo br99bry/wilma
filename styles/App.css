@@ -4483,3 +4483,6 @@ summary::-webkit-details-marker,summary::marker {
 .background-none{
   background: none;;
 }
+.width-inherit{
+  width: inherit;
+}

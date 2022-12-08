@@ -97,7 +97,7 @@ const ContractForm3 = () => {
                         />
                         <label className="flex items-center m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm rounded-xl hover:bg-gray-100 p-2 font-medium">
                           <input
-                            className="mr-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current background-none"
+                            className="mr-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current background-none width-inherit"
                             id="gender_radio_input_gastos_yes"
                             name="life_policy_application[data][ingresos]"
                             required=""
@@ -107,21 +107,43 @@ const ContractForm3 = () => {
                         </label>
                       </div>
                     </div>
-                    
                     <div className="w-full radio-box" id="ingresos_input_parent">
-                      <legend className="block text-lg leading-relaxed font-semibold ">
+                      <div className="flex items-center justify-between -mx-1 w-full">
+                      <h2 className="mb-2 text-xl md:text-3xl font-semibold">
                       Membresía:
-                      </legend>
-                      <div className="flex items-center justify-between -mx-1 w-full">
+                      </h2>
                         <input
                           id="life_policy_application_data_gender"
                           name="ingresos_facturacion"
                           type="hidden"
                           value=""
                         />
-                        <label className="flex items-center w-full m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm cursor-pointer rounded-xl hover:bg-gray-100 p-2 font-medium">
+                        <label className="flex items-center m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm rounded-xl hover:bg-gray-100 p-2 font-medium">
                           <input
-                            className="mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
+                            className="mr-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current background-none width-inherit"
+                            id="gender_radio_input_gastos_yes"
+                            name="life_policy_application[data][ingresos]"
+                            required=""
+                            type="text"
+                            disabled
+                          />
+                        </label>
+                      </div>
+                    </div>
+                    <div className="w-full radio-box" id="ingresos_input_parent">
+                      <div className="flex items-center justify-between -mx-1 w-full">
+                      <h2 className="mb-2 text-xl md:text-3xl font-semibold">
+                      Costo anual:
+                      </h2>
+                        <input
+                          id="life_policy_application_data_gender"
+                          name="ingresos_facturacion"
+                          type="hidden"
+                          value=""
+                        />
+                        <label className="flex items-center m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm rounded-xl hover:bg-gray-100 p-2 font-medium">
+                          <input
+                            className="mr-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current background-none width-inherit"
                             id="gender_radio_input_gastos_yes"
                             name="life_policy_application[data][ingresos]"
                             required=""
@@ -132,29 +154,6 @@ const ContractForm3 = () => {
                       </div>
                     </div>
                     
-                    <div className="w-full radio-box" id="ingresos_input_parent">
-                      <legend className="block text-lg leading-relaxed font-semibold ">
-                      Costo anual:
-                      </legend>
-                      <div className="flex items-center justify-between -mx-1 w-full">
-                        <input
-                          id="life_policy_application_data_gender"
-                          name="ingresos_facturacion"
-                          type="hidden"
-                          value=""
-                        />
-                        <label className="flex items-center w-full m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm cursor-pointer rounded-xl hover:bg-gray-100 p-2 font-medium">
-                          <input
-                            className="mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
-                            id="gender_radio_input_gastos_yes"
-                            name="life_policy_application[data][ingresos]"
-                            required=""
-                            type="text"
-                            disabled
-                          />
-                        </label>
-                      </div>
-                    </div>
                   </fieldset>
                 </div>
               </form>
