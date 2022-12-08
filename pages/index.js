@@ -65,7 +65,7 @@ function App() {
     });
   }
   return (
-    <div className="py-4 md:py-8">
+    <div class="relative flex flex-col flex-1 bg-new-super-blue-100">
       <div class="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
       <section className="flex w-full md:items-center md:justify-center md:w-1/2">
         <form
