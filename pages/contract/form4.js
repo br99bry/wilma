@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 
 const ContractForm3 = () => {
   const router = useRouter()
-  console.log(localStorage.getItem('ciudad'))
   const [form, setForm] = useState({
     nombre: '',
     domicilio: '',
