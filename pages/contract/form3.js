@@ -1,6 +1,8 @@
 import { useState, useRef } from "react";
+import { useRouter } from 'next/router';
 
 const ContractForm3 = () => {
+  const router = useRouter()
 
   const [form, setForm] = useState({
     nombre: '',
