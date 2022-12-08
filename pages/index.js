@@ -63,7 +63,6 @@ function App() {
       .catch((error) => {
         console.error('Error:', error);
       });
-      localStorage('ciudad','los cabos')
   }
   return (
     <main className="flex flex-col justify-between min-h-screen">

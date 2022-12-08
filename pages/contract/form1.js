@@ -40,7 +40,9 @@ const ContractForm1 = () => {
       console.error('Error:', error);
     });
 
-  localStorage.removeItem('idUser')
+  localStorage.removeItem('idUser');
+  localStorage.setItem('ciudad','los cabos')
+
   }
 
   return (
