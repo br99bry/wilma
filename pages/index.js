@@ -66,6 +66,7 @@ function App() {
   }
   return (
     <div className="py-4 md:py-8">
+      <div class="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
       <section className="max-w-md px-4 mx-auto md:px-8 md:bg-white md:shadow-md md:border md:rounded-2xl font-v2_body">
         <form
           action="#"
@@ -333,6 +334,7 @@ function App() {
           </div>
         </form>
       </section>
+    </div>
     </div>
   );
 }
