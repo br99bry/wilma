@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-const Contract = () => {
+const ContractForm1 = () => {
 
   const [form, setForm] = useState({
     nombre: '',
@@ -51,8 +51,9 @@ const Contract = () => {
   }
 
   const handleSubmit = () => {
-  console.log('voy a enviar el siguiente registro al backend')
-  const id = localStorage.getItem('idUser')
+    router.push('/contract/form2')
+    console.log('voy a enviar el siguiente registro al backend')
+    const id = localStorage.getItem('idUser')
   fetch(`http://137.184.7.90:1337/api/records/${id}`, {
     method: 'PUT',
     headers: {
@@ -208,66 +209,6 @@ const Contract = () => {
                           </select>
                       </div>
                     </div>
-                    {/* <div className="w-full">
-                      <label
-                        className="block mb-1 text-lg font-semibold"
-                        for="rfc_text_input"
-                      >
-                        RFC
-                      </label>
-                      <div
-                        id="rfc_text_input_parent"
-                        className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
-                      >
-                        <input
-                          autocomplete=""
-                          className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
-                          id="rfc_text_input"
-                          inputmode="email"
-                          name="rfc"
-                          oninput="setCustomValidity('')"
-                          oninvalid="this.setCustomValidity('Campo requerido')"
-                          phx-debounce="250"
-                          required=""
-                          type="text"
-                          onChange={(event) => (handleChangeValue(event))}
-                        />
-                      </div>
-                    </div>
-                    <div className="w-full">
-                      <label
-                        className="block mb-1 text-lg font-semibold"
-                        for="membresia_text_input"
-                      >
-                        Limite de Indemnización de tu membresía
-                      </label>
-                      <div
-                        id="membresia_text_input_parent"
-                        className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
-                      >
-                        <select
-                            className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
-                            id="number_of_stories_select_input"
-                            name="indemnizacion"
-                            phx-debounce="250"
-                            required=""
-                            onChange={(event) => (handleChangeValue(event))}
-                          >
-                            <option value="" selected="">
-                              Seleccionar Limite
-                            </option>
-                            <option value="1">
-                              $250,000
-                            </option>
-                            <option value="2">
-                              $500,000
-                            </option>
-                            <option value="3">
-                              $650,000
-                            </option>
-                          </select>
-                      </div>
-                    </div> */}
                     <div className="w-full">
                       <label
                         className="block mb-1 text-lg font-semibold"
@@ -317,7 +258,7 @@ const Contract = () => {
                 </div>
               </form>
             </section>
-            <div className="hidden w-1/2 bg-cover md:block fondo-uno">
+            <div className="hidden w-1/2 bg-cover md:block fondo-dos">
             </div>
           </div>
         </div>
@@ -326,4 +267,4 @@ const Contract = () => {
   );
 };
 
-export default Contract;
+export default ContractForm1;

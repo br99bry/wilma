@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-const Contract = () => {
+const ContractForm2 = () => {
 
   const [form, setForm] = useState({
     nombre: '',
@@ -51,7 +51,8 @@ const Contract = () => {
   }
 
   const handleSubmit = () => {
-  console.log('voy a enviar el siguiente registro al backend')
+    router.push('/contract/form3')
+    console.log('voy a enviar el siguiente registro al backend')
   const id = localStorage.getItem('idUser')
   fetch(`http://137.184.7.90:1337/api/records/${id}`, {
     method: 'PUT',
@@ -306,7 +307,7 @@ const Contract = () => {
                 </div>
               </form>
             </section>
-            <div className="hidden w-1/2 bg-cover md:block fondo-uno">
+            <div className="hidden w-1/2 bg-cover md:block fondo-tres">
             </div>
           </div>
         </div>
@@ -315,4 +316,4 @@ const Contract = () => {
   );
 };
 
-export default Contract;
+export default ContractForm2;

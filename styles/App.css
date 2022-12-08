@@ -4464,3 +4464,15 @@ summary::-webkit-details-marker,summary::marker {
   background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_2.jpg');
   background-position: 50% 50%;
 }
+.fondo-dos{
+  background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_3.jpg');
+  background-position: 50% 50%;
+}
+.fondo-tres{
+  background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_4.jpg');
+  background-position: 50% 50%;
+}
+.fondo-cuatro{
+  background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_1.jpg');
+  background-position: 50% 50%;
+}
