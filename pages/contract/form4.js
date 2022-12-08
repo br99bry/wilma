@@ -85,10 +85,10 @@ const ContractForm3 = () => {
                   </div>
                   <fieldset className="space-y-6">
                     <div className="w-full radio-box" id="ingresos_input_parent">
+                      <div className="flex items-center justify-between -mx-1 w-full">
                       <legend className="block text-lg leading-relaxed font-semibold ">
                       Ciudad: 
                       </legend>
-                      <div className="flex items-center justify-between -mx-1 w-full">
                         <input
                           id="life_policy_application_data_gender"
                           name="ingresos_facturacion"
