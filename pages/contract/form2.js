@@ -43,14 +43,6 @@ const ContractForm2 = () => {
     }
   }
 
-  const empleados = useRef();
-  const ingresosType = (value) => {
-    if(value.target._wrapperState.initialValue == "si"){
-      empleados.current.classList.remove('ocultar');
-    }else if(value.target._wrapperState.initialValue == "no"){
-      empleados.current.classList.add('ocultar');
-    }
-  }
 
   const handleSubmit = () => {
     router.push('/contract/form3')

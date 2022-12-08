@@ -21,38 +21,6 @@ const ContractForm1 = () => {
     })
   }
 
-  const local = useRef()
-  const localType = (value) => {
-    if(value.target._wrapperState.initialValue == "propio"){
-      local.current.classList.remove('ocultar');
-    }else if(value.target._wrapperState.initialValue == "arrendado"){
-      local.current.classList.add('ocultar');
-    }
-  };
-
-  const cobertura = useRef();
-  const coberturaGastos = useRef();
-  const coberturaUtilidades = useRef();
-  const coberturaType = (value) => {
-    cobertura.current.classList.remove('ocultar');
-    if(value.target._wrapperState.initialValue == "gastos"){
-      coberturaGastos.current.classList.remove('ocultar');
-      coberturaUtilidades.current.classList.add('ocultar');
-    }else if(value.target._wrapperState.initialValue == "utilidades"){
-      coberturaUtilidades.current.classList.remove('ocultar');
-      coberturaGastos.current.classList.add('ocultar');
-    }
-  }
-
-  const empleados = useRef();
-  const ingresosType = (value) => {
-    if(value.target._wrapperState.initialValue == "si"){
-      empleados.current.classList.remove('ocultar');
-    }else if(value.target._wrapperState.initialValue == "no"){
-      empleados.current.classList.add('ocultar');
-    }
-  }
-
   const handleSubmit = () => {
     router.push('/contract/form2')
     console.log('voy a enviar el siguiente registro al backend')
