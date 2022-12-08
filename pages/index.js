@@ -215,7 +215,7 @@ function App() {
                   </div> */}
                         <div className=" relative flex items-center justify-between w-full">
                           <select
-                            className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
+                            className="w-full p-2 border-none outline-none focus:text-v2-super-gray-700 bg-transparent pr-8"
                             id="number_of_stories_select_input"
                             name="giro"
                             phx-debounce="250"
@@ -336,7 +336,7 @@ function App() {
                 </div>
               </form>
             </section>
-            <div class="hidden w-1/2 bg-cover md:block fondo-uno">
+            <div className="hidden w-1/2 bg-cover md:block fondo-uno">
             </div>
           </div>
         </div>

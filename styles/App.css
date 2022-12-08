@@ -4461,5 +4461,6 @@ summary::-webkit-details-marker,summary::marker {
   padding-top: 20px;
 }
 .fondo-uno{
-  background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_2.jpg')
+  background-image:url('https://clientes.kuper.mx/wilma/img/wilma_fondo_2.jpg');
+  background-position: 50% 50%;
 }
