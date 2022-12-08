@@ -1,13 +1,4 @@
 import { useState, useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-import "./styles.css";
-
-import { Pagination, Navigation } from "swiper";
 
 const Contract = () => {
 
@@ -80,37 +71,11 @@ const Contract = () => {
   localStorage.removeItem('idUser')
   }
 
-  var swiper = new Swiper(".mySwiper", {
-    pagination: {
-      el: ".swiper-pagination",
-      type: "progressbar",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
   return (
     <main className="flex flex-col justify-between min-h-screen">
       <div className="phx-connected">
         <div className="relative flex flex-col flex-1 bg-new-super-blue-100">
           <div className="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
-            <div className="swiper mySwiper">
-              <div className="swiper-wrapper">
-                <div className="swiper-slide">Slide 1</div>
-                <div className="swiper-slide">Slide 2</div>
-                <div className="swiper-slide">Slide 3</div>
-                <div className="swiper-slide">Slide 4</div>
-                <div className="swiper-slide">Slide 5</div>
-                <div className="swiper-slide">Slide 6</div>
-                <div className="swiper-slide">Slide 7</div>
-                <div className="swiper-slide">Slide 8</div>
-                <div className="swiper-slide">Slide 9</div>
-              </div>
-              <div className="swiper-button-next"></div>
-              <div className="swiper-button-prev"></div>
-              <div className="swiper-pagination"></div>
-            </div>
             <section className="flex w-full md:items-center md:justify-center md:w-1/2">
               <form
                 action="#"
@@ -129,14 +94,11 @@ const Contract = () => {
                 <div className="w-11/12 max-w-lg py-8 mx-auto">
                   <div className="mb-4">
                     <h2 className="mb-2 text-xl md:text-3xl font-semibold">
-                      Contratacíon
+                    Cuéntanos más sobre <strong className="text-new-super-purple">tu negocio</strong>
                     </h2>
-                    <p className="text-base leading-relaxed md:text-lg">
-                      Ingresa los siguientes datos
-                    </p>
                   </div>
                   <fieldset className="space-y-6">
-                    <div className="w-full">
+                  <div className="w-full">
                       <label
                         className="block mb-1 text-lg font-semibold"
                         for="full_name_text_input"
@@ -166,7 +128,7 @@ const Contract = () => {
                         className="block mb-1 text-lg font-semibold"
                         for="dom_fiscal_text_input"
                       >
-                        Domicilio fiscal
+                        Domicilio Fiscal
                       </label>
                       <div
                         id="dom_fiscal_text_input_parent"
@@ -211,8 +173,41 @@ const Contract = () => {
                           type="text"
                         />
                       </div>
+                    </div><div className="w-full">
+                      <label
+                        className="block mb-1 text-lg font-semibold"
+                        for="membresia_text_input"
+                      >
+                        Membresía
+                      </label>
+                      <div
+                        id="membresia_text_input_parent"
+                        className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
+                      >
+                        <select
+                            className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
+                            id="number_of_stories_select_input"
+                            name="membresia"
+                            phx-debounce="250"
+                            required=""
+                            onChange={(event) => (handleChangeValue(event))}
+                          >
+                            <option value="" selected="">
+                              Selecciona tu membresía
+                            </option>
+                            <option value="1">
+                              Sandy
+                            </option>
+                            <option value="2">
+                              Michelle
+                            </option>
+                            <option value="3">
+                              Katrina
+                            </option>
+                          </select>
+                      </div>
                     </div>
-                    <div className="w-full">
+                    {/* <div className="w-full">
                       <label
                         className="block mb-1 text-lg font-semibold"
                         for="rfc_text_input"
@@ -271,13 +266,13 @@ const Contract = () => {
                             </option>
                           </select>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="w-full">
                       <label
                         className="block mb-1 text-lg font-semibold"
                         for="city_of_stories_select_input"
                       >
-                        Ciudad donde tienes un interés económico
+                        Ciudad
                       </label>
                       <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
                         <div className=" relative flex items-center justify-between w-full">
@@ -311,7 +306,7 @@ const Contract = () => {
                         className="block mb-1 text-lg font-semibold"
                         for="valor_estimado_select_input"
                       >
-                        Valor Estimado de los Activos de la Compañia
+                        Valor estimado de los activos de tu compañía
                       </label>
                       <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
                         <div className=" relative flex items-center justify-between w-full">
@@ -340,7 +335,7 @@ const Contract = () => {
                     </div>
                     <div className="w-full radio-box" id="gender_radio_input_parent">
                       <legend className="block text-lg leading-relaxed font-semibold ">
-                        ¿El local donde operas es Propio o Arrendado?
+                      Tipo de Local
                       </legend>
                       <div className="flex items-center justify-between -mx-1 w-full">
                         <input
@@ -388,7 +383,7 @@ const Contract = () => {
                         className="block mb-1 text-lg font-semibold"
                         for="valor_inmueble_select_input"
                       >
-                        Valor de bien inmueble propio
+                        Valor del bien inmueble propio
                       </label>
                       <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
                         <div className=" relative flex items-center justify-between w-full">
@@ -416,8 +411,8 @@ const Contract = () => {
                     </div>
                     <div className="w-full radio-box" id="gastos_radio_input_parent">
                       <legend className="block text-lg leading-relaxed font-semibold ">
-                        ¿Te gustaría cubrir tus gastos fijos o tus utilidades después
-                        de impuestos?
+                      ¿Te gustaría cubrir tus gastos fijos o tus
+                      utilidades después de impuestos?
                       </legend>
                       <div className="flex items-center justify-between -mx-1 w-full">
                         <input
@@ -467,13 +462,13 @@ const Contract = () => {
                         className="block mb-1 text-lg font-semibold ocultar"
                         for="cobertura_select_input" ref={coberturaGastos}
                       >
-                        Valores de tus Gastos Fijos
+                        Valor de tus gastos fijos
                       </label>
                       <label
                         className="block mb-1 text-lg font-semibold ocultar"
                         for="cobertura_select_input" ref={coberturaUtilidades}
                       >
-                        Valores de tus Utilidades antes de impuestos
+                        Utilidades antes de impuestos
                       </label>
                       <div className=" border-2 flex items-center w-full text-xl font-medium bg-white outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:border-pink-500">
                         <div className=" relative flex items-center justify-between w-full">
@@ -501,8 +496,8 @@ const Contract = () => {
                     </div>
                     <div className="w-full radio-box" id="ingresos_input_parent">
                       <legend className="block text-lg leading-relaxed font-semibold ">
-                        ¿Tus ingresos por facturación anual son superiores a
-                        $235,000,000?
+                      ¿Tus ingresos por facturación anual son
+                      superiores a $235,000,000?
                       </legend>
                       <div className="flex items-center justify-between -mx-1 w-full">
                         <input
@@ -545,7 +540,7 @@ const Contract = () => {
                     </div>
                     <div className="w-full radio-box empleados ocultar" ref={empleados} id="empleados_input_parent">
                       <legend className="block text-lg leading-relaxed font-semibold ">
-                        ¿Cuentas con más de 100 empleados?
+                      ¿Cuentas con más de 100 empleados?
                       </legend>
                       <div className="flex items-center justify-between -mx-1 w-full">
                         <input
