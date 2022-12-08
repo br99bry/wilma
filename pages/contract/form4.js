@@ -55,7 +55,7 @@ const ContractForm3 = () => {
       <div className="phx-connected">
         <div className="relative flex flex-col flex-1 bg-new-super-blue-100">
           <div className="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
-            <section className="flex w-full md:items-center md:justify-center md:w-1/2">
+            <section className="flex justify-center w-full md:items-center md:justify-center md:w-1/2">
               <form
                 action="#"
                 data-test-id="start"
