@@ -1,4 +1,13 @@
 import { useState, useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./styles.css";
+
+import { Pagination, Navigation } from "swiper";
 
 const Contract = () => {
 
@@ -75,6 +84,26 @@ const Contract = () => {
       <div className="phx-connected">
         <div className="relative flex flex-col flex-1 bg-new-super-blue-100">
           <div className="flex flex-col items-stretch justify-between flex-1 w-full md:flex-row">
+            <>
+              <Swiper
+                pagination={{
+                  type: "progressbar",
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>Slide 1</SwiperSlide>
+                <SwiperSlide>Slide 2</SwiperSlide>
+                <SwiperSlide>Slide 3</SwiperSlide>
+                <SwiperSlide>Slide 4</SwiperSlide>
+                <SwiperSlide>Slide 5</SwiperSlide>
+                <SwiperSlide>Slide 6</SwiperSlide>
+                <SwiperSlide>Slide 7</SwiperSlide>
+                <SwiperSlide>Slide 8</SwiperSlide>
+                <SwiperSlide>Slide 9</SwiperSlide>
+              </Swiper>
+            </>
             <section className="flex w-full md:items-center md:justify-center md:w-1/2">
               <form
                 action="#"
