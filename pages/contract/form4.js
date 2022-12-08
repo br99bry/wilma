@@ -96,6 +96,14 @@ const ContractForm3 = () => {
                           value=""
                         />
                         <label className="flex items-center w-full m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm cursor-pointer rounded-xl hover:bg-gray-100 p-2 font-medium">
+                          <input
+                            className="mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
+                            id="gender_radio_input_gastos_yes"
+                            name="life_policy_application[data][ingresos]"
+                            required=""
+                            type="text"
+                            disabled
+                          />
                         </label>
                       </div>
                     </div>
@@ -112,6 +120,14 @@ const ContractForm3 = () => {
                           value=""
                         />
                         <label className="flex items-center w-full m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm cursor-pointer rounded-xl hover:bg-gray-100 p-2 font-medium">
+                          <input
+                            className="mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
+                            id="gender_radio_input_gastos_yes"
+                            name="life_policy_application[data][ingresos]"
+                            required=""
+                            type="text"
+                            disabled
+                          />
                         </label>
                       </div>
                     </div>
@@ -128,6 +144,14 @@ const ContractForm3 = () => {
                           value=""
                         />
                         <label className="flex items-center w-full m-1 px-2 py-2 text-xl font-medium bg-white border-2 border-v3-super-gray-400 shadow-sm cursor-pointer rounded-xl hover:bg-gray-100 p-2 font-medium">
+                          <input
+                            className="mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
+                            id="gender_radio_input_gastos_yes"
+                            name="life_policy_application[data][ingresos]"
+                            required=""
+                            type="text"
+                            disabled
+                          />
                         </label>
                       </div>
                     </div>
