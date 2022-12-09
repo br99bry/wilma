@@ -118,7 +118,6 @@ function App() {
                           placeholder=""
                           required
                           type="text"
-                          ref={inputUsuario}
                           onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
@@ -337,8 +336,6 @@ function App() {
                       phx-disable-with="..."
                       type="button"
                       onClick={() => (handleSubmit())}
-                      disabled
-                      ref={botonSubmit1}
                     >
                       Continuar{" "}
                     </button>
