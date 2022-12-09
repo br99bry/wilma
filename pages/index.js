@@ -51,7 +51,11 @@ function App() {
   const inputNombre = useRef()
   const validacion = () =>{
     console.log(inputNombre.current.value);
-
+    if(inputNombre.current.value = ""){
+      console.log("vacio")
+    }else{
+      console.log(inputNombre.current.value)
+    }
   }
   const handleSubmit = () => {
     /* router.push('/contract/form1') */
