@@ -264,7 +264,7 @@ const ContractForm1 = () => {
                             onChange={(event) => (handleChangeValue(event))}
                             disabled
                           >
-                            <option value="" selected="">
+                            <option value="">
                               Limite
                             </option>
                             <option value="1">
