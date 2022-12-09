@@ -10,7 +10,7 @@ const ContractForm1 = () => {
   const selectIndemnizacionCustom = useRef();
   const membresiaSelect = () => {
     var selectedOption = numberOfMemberSelectInput.current.options.selectedIndex;
-    console.log(selectedOption.current.selectedIndex)
+    console.log(selectedOption.current.options.selectedIndex)
     if (selectedOption == 4) {
       selectIndemnizacionCustom.current.classList.remove('ocultar')
       selectIndemnizacion.current.classList.add('ocultar')
