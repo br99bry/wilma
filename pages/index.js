@@ -50,11 +50,10 @@ function App() {
 
   const inputNombre = useRef()
   const validacion = () =>{
-    console.log(inputNombre.current.value);
     if(inputNombre.current.value = ""){
-      console.log("vacio")
+      console.log("vacio",inputNombre.current.value)
     }else{
-      console.log(inputNombre.current.value)
+      console.log("texto", inputNombre.current.value)
     }
   }
   const handleSubmit = () => {
