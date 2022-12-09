@@ -48,10 +48,15 @@ function App() {
     })
   }
 
+  const validacion = () =>{
+    let inputNombre = useRef()
+    console.log(inputNombre.current);
+  }
   const handleSubmit = () => {
     router.push('/contract/form1')
     console.log('voy a enviar el siguiente registro al backend')
-    fetch('http://137.184.7.90:1337/api/records', {
+    validacion();
+    /* fetch('http://137.184.7.90:1337/api/records', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -68,7 +73,7 @@ function App() {
       })
       .catch((error) => {
         console.error('Error:', error);
-      });
+      }); */
   }
   return (
     <main className="flex flex-col justify-between min-h-screen">
@@ -120,6 +125,7 @@ function App() {
                           phx-debounce="250"
                           placeholder=""
                           required
+                          ref={inputNombre}
                           type="text"
                           onChange={(event) => (handleChangeValue(event))}
                         />
