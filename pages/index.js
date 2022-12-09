@@ -61,24 +61,7 @@ function App() {
     /* router.push('/contract/form1') */
     console.log('voy a enviar el siguiente registro al backend')
     validacion();
-    fetch('http://137.184.7.90:1337/api/records', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ data: form }),
-    })
-      .then((response) => {
-        response.json();
-      })
-      .then((dataJson) => {
-        console.log('Success:', dataJson);
-        localStorage.setItem('idUser', dataJson.data.id)
-
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+    
   }
   return (
     <main className="flex flex-col justify-between min-h-screen">
