@@ -47,11 +47,11 @@ function App() {
       [event.target.name]: event.target.value,
     })
   }
+  const inputNombre = useRef()
 
   const handleSubmit = () => {
     router.push('/contract/form1')
     console.log('voy a enviar el siguiente registro al backend')
-    const inputNombre = useRef()
     console.log(inputNombre.current)
   }
   return (
