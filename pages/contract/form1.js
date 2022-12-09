@@ -15,8 +15,8 @@ const ContractForm1 = () => {
       selectIndemnizacionCustom.current.classList.remove('ocultar')
       selectIndemnizacion.current.classList.add('ocultar')
     } else {
-      selectIndemnizacionCustom.current.classList.remove('ocultar')
-      selectIndemnizacion.current.classList.add('ocultar')
+      selectIndemnizacionCustom.current.classList.add('ocultar')
+      selectIndemnizacion.current.classList.remove('ocultar')
     }
   }
 
