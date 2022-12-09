@@ -50,7 +50,8 @@ function App() {
 
   const inputNombre = useRef()
   const validacion = () =>{
-    console.log(inputNombre.current);
+    console.log(inputNombre.current.value);
+
   }
   const handleSubmit = () => {
     /* router.push('/contract/form1') */
