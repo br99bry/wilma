@@ -222,13 +222,14 @@ const ContractForm1 = () => {
                         id="membresia_text_input_parent"
                         className="flex items-center overflow-hidden text-xl font-medium bg-white border-2 outline-none border-v3-super-gray-400 rounded-xl focus-within:ring-2 focus-within:ring-pink-200 focus-within:border-pink-500"
                       >
-                        <select
+                          <select
                             className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
                             id="number_of_stories_select_input"
                             name="indemnizacion"
                             phx-debounce="250"
                             required=""
                             onChange={(event) => (handleChangeValue(event))}
+                            disabled
                           >
                             <option value="" selected="">
                               Seleccionar Limite
@@ -245,7 +246,7 @@ const ContractForm1 = () => {
                           </select>
                           <input
                           autocomplete=""
-                          className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
+                          className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full ocultar"
                           id="rfc_text_input"
                           inputmode="email"
                           name="indemnizacionCustom"
