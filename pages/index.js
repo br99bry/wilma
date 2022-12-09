@@ -49,6 +49,12 @@ function App() {
   }
 
   const handleSubmit = () => {
+    let botonSubmit1 = useRef()
+    let inputUsuario = useRef()
+    if(inputUsuario.current.value == ''){
+
+    }else{
+      botonSubmit1.current.removeAttribute('dasbled')
     router.push('/contract/form1')
     console.log('voy a enviar el siguiente registro al backend')
     fetch('http://137.184.7.90:1337/api/records', {
@@ -65,7 +71,7 @@ function App() {
       })
       .catch((error) => {
         console.error('Error:', error);
-      });
+      })}
   }
   return (
     <main className="flex flex-col justify-between min-h-screen">
@@ -118,6 +124,7 @@ function App() {
                           placeholder=""
                           required
                           type="text"
+                          ref={inputUsuario}
                           onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
@@ -336,6 +343,8 @@ function App() {
                       phx-disable-with="..."
                       type="button"
                       onClick={() => (handleSubmit())}
+                      disabled
+                      ref={botonSubmit1}
                     >
                       Continuar{" "}
                     </button>
