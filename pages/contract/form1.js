@@ -5,6 +5,22 @@ import { useRouter } from 'next/router';
 const ContractForm1 = () => {
   const router = useRouter()
 
+  const numberOfMemberSelectInput = useRef();
+  const selectIndemnizacion = useRef();
+  const selectIndemnizacionCustom = useRef();
+  const membresiaSelect = () => {
+    var selectedOption = numberOfMemberSelectInput.current.options.selectedIndex;
+    console.log(selectedOption.current.value)
+    if (selectedOption == 4) {
+      selectIndemnizacionCustom.current.classList.remove('ocultar')
+      selectIndemnizacion.current.classList.add('ocultar')
+    } else {
+      selectIndemnizacionCustom.current.classList.remove('ocultar')
+      selectIndemnizacion.current.classList.add('ocultar')
+    }
+  }
+
+
   const [form, setForm] = useState({
     nombre: '',
     domicilio: '',
@@ -192,6 +208,8 @@ const ContractForm1 = () => {
                             phx-debounce="250"
                             required=""
                             onChange={(event) => (handleChangeValue(event))}
+                            onClick={() => (membresiaSelect())}
+                            ref={numberOfMemberSelectInput}
                           >
                             <option value="" selected="">
                               Selecciona tu membresía
@@ -211,7 +229,7 @@ const ContractForm1 = () => {
                           </select>
                       </div>
                     </div>
-                    <div className="w-full">
+                    <div className="w-full" >
                       <label
                         className="block mb-1 text-lg font-semibold"
                         for="membresia_text_input"
@@ -228,11 +246,12 @@ const ContractForm1 = () => {
                             name="indemnizacion"
                             phx-debounce="250"
                             required=""
+                            ref={selectIndemnizacion}
                             onChange={(event) => (handleChangeValue(event))}
                             disabled
                           >
                             <option value="" selected="">
-                              Seleccionar Limite
+                              Limite
                             </option>
                             <option value="1">
                               $250,000
@@ -255,6 +274,7 @@ const ContractForm1 = () => {
                           phx-debounce="250"
                           required=""
                           type="text"
+                          ref={selectIndemnizacionCustom}
                           placeholder="$250,000 a $7,000,000"
                           onChange={(event) => (handleChangeValue(event))}
                         />
