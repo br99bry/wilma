@@ -46,7 +46,6 @@ const ContractForm1 = () => {
   })
 
   const handleChangeValue = (event) => {
-    console.log(event.target.value)
     setForm({
       ...form,
       [event.target.name]: event.target.value,
@@ -58,7 +57,7 @@ const ContractForm1 = () => {
     console.log('voy a enviar el siguiente registro al backend')
     const id = localStorage.getItem('idUser')
     comsole.log(data);
-    fetch(`http://137.184.7.90:1337/api/records/${id}`, {
+    fetch(`http://137.184.7.90:1337/api/records/:${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -72,8 +71,6 @@ const ContractForm1 = () => {
     .catch((error) => {
       console.error('Error:', error);
     });
-
-
   }
 
   return (
