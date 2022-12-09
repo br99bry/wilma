@@ -17,19 +17,19 @@ const ContractForm1 = () => {
     } else if(selectedOption == 0){
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
-      selectIndemnizacion.current.options.selectedIndex == 0;
+      selectIndemnizacion.current.options.selectedIndex = 0;
     } else if(selectedOption == 1){
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
-      selectIndemnizacion.current.options.selectedIndex == 1;
+      selectIndemnizacion.current.options.selectedIndex = 1;
     } else if(selectedOption == 2){
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
-      selectIndemnizacion.current.options.selectedIndex == 2;
+      selectIndemnizacion.current.options.selectedIndex = 2;
     } else if(selectedOption == 3){
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
-      selectIndemnizacion.current.options.selectedIndex == 3;
+      selectIndemnizacion.current.options.selectedIndex = 3;
     }
   }
 
