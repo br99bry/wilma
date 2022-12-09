@@ -34,7 +34,7 @@ const ContractForm1 = () => {
   }
 
 
-  const [form1, setForm1] = useState({
+  const [form, setForm] = useState({
     nombre: '',
     domicilio: '',
     emailEmpresa:'',
@@ -42,12 +42,12 @@ const ContractForm1 = () => {
     membresia:'',
     indemnizacion: '',
     indemnizacionCustom:'',
-    ciudad_interes: '',
+    ciudad_interes: ''
   })
 
   const handleChangeValue = (event) => {
-    setForm1({
-      ...form1,
+    setForm({
+      ...form,
       [event.target.name]: event.target.value,
     })
   }
@@ -61,7 +61,7 @@ const ContractForm1 = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({data: form1}),
+      body: JSON.stringify({data: form}),
   })
     .then((response) => response.json())
     .then((data) => {
