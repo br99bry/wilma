@@ -58,10 +58,14 @@ function App() {
       },
       body: JSON.stringify({ data: form }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        response.json();
+        console.log('response', response)
+      })
       .then((dataJson) => {
         console.log('Success:', dataJson);
         localStorage.setItem('idUser', dataJson.data.id)
+
       })
       .catch((error) => {
         console.error('Error:', error);
