@@ -53,7 +53,7 @@ function App() {
   const inputCorreo = useRef()
   const inputPassword = useRef()
   const validacion = () =>{
-    if(inputNombre.current.value === "" || inputWhatsapp.current.value === "" || inputCorreo.current.value === "" || inputCorreo.current.value === ""){
+    if(inputNombre.current.value === "" || inputWhatsapp.current.value === "" || inputCorreo.current.value === "" || inputCorreo.current.value === "" || numerOfStoriesSelectInput.current.options === 0 ){
       console.log("vacio")
     }else{
       console.log("texto")
