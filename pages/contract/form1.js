@@ -34,7 +34,7 @@ const ContractForm1 = () => {
   }
 
 
-  const [form1, setForm] = useState({
+  const [form1, setForm1] = useState({
     nombre: '',
     domicilio: '',
     emailEmpresa:'',
@@ -46,7 +46,7 @@ const ContractForm1 = () => {
   })
 
   const handleChangeValue = (event) => {
-    setForm({
+    setForm1({
       ...form1,
       [event.target.name]: event.target.value,
     })
