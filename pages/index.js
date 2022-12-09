@@ -49,7 +49,7 @@ function App() {
   }
 
   const handleSubmit = () => {
-    router.push('/contract/')
+    router.push('/contract/form1')
     console.log('voy a enviar el siguiente registro al backend')
     fetch('http://137.184.7.90:1337/api/records', {
       method: 'POST',
