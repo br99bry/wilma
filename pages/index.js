@@ -116,7 +116,7 @@ function App() {
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
                           placeholder=""
-                          required=""
+                          required
                           type="text"
                           onChange={(event) => (handleChangeValue(event))}
                         />
@@ -146,7 +146,7 @@ function App() {
                           phx-debounce="250"
                           phx-hook="formatPhone"
                           placeholder=""
-                          required=""
+                          required
                           type="text"
                           onChange={(event) => (handleChangeValue(event))}
                         />
@@ -173,7 +173,7 @@ function App() {
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
                           placeholder=""
-                          required=""
+                          required
                           type="email"
                           onChange={(event) => (handleChangeValue(event))}
                         />
@@ -200,7 +200,7 @@ function App() {
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
                           placeholder=""
-                          required=""
+                          required
                           type="password"
                           onChange={(event) => (handleChangeValue(event))}
                         />
@@ -222,7 +222,7 @@ function App() {
                             id="number_of_stories_select_input"
                             name="giro"
                             phx-debounce="250"
-                            required=""
+                            required
                             ref={numerOfStoriesSelectInput}
                             onClick={() => (questions())}
                             onChange={(event) => (handleChangeValue(event))}
