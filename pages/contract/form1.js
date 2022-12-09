@@ -37,7 +37,7 @@ const ContractForm1 = () => {
   const [form, setForm] = useState({
     nombre: '',
     domicilio: '',
-    email:'',
+    emailEmpresa:'',
     rfc: '',
     membresia:'',
     indemnizacion: '',
@@ -46,6 +46,7 @@ const ContractForm1 = () => {
   })
 
   const handleChangeValue = (event) => {
+    console.log(event.target)
     setForm({
       ...form,
       [event.target.name]: event.target.value,
@@ -167,7 +168,7 @@ const ContractForm1 = () => {
                           className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent w-full "
                           id="email_text_input"
                           inputmode="email"
-                          name="email"
+                          name="emailEmpresa"
                           oninput="setCustomValidity('')"
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
