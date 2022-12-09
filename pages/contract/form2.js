@@ -5,12 +5,11 @@ const ContractForm2 = () => {
   const router = useRouter()
 
   const [form, setForm] = useState({
-    nombre: '',
-    domicilio: '',
-    rfc: '',
-    indemnizacion: '',
-    ciudad_interes: '',
     valor_activos: '',
+    tipo_local: '',
+    inmueble: '',
+    gastos_utilidades:'',
+    valor_gastos_utilidades:''
   })
 
   const handleChangeValue = (event) => {
@@ -266,7 +265,7 @@ const ContractForm2 = () => {
                           <select
                             className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
                             id="cobertura_select_input"
-                            name="valors_gastos_utilidades"
+                            name="valor_gastos_utilidades"
                             phx-debounce="250"
                             required=""
                           >
