@@ -49,18 +49,39 @@ function App() {
   }
 
   const inputNombre = useRef()
+  const inputWhatsapp = useRef()
+  const inputCorreo = useRef()
+  const inputPassword = useRef()
   const validacion = () =>{
-    if(inputNombre.current.value == ""){
-      console.log("vacio",inputNombre.current.value)
+    if(inputNombre.current.value === "" || inputWhatsapp.current.value === "" || inputCorreo.current.value === "" || inputCorreo.current.value === ""){
+      console.log("vacio")
     }else{
-      console.log("texto", inputNombre.current.value)
+      console.log("texto")
     }
   }
+
   const handleSubmit = () => {
     /* router.push('/contract/form1') */
     console.log('voy a enviar el siguiente registro al backend')
     validacion();
-    
+    fetch('http://137.184.7.90:1337/api/records', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ data: form }),
+    })
+      .then((response) => {
+        response.json();
+      })
+      .then((dataJson) => {
+        console.log('Success:', dataJson);
+        localStorage.setItem('idUser', dataJson.data.id)
+
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
   return (
     <main className="flex flex-col justify-between min-h-screen">
@@ -143,6 +164,7 @@ function App() {
                           phx-hook="formatPhone"
                           placeholder=""
                           required
+                          ref={inputWhatsapp}
                           type="text"
                           onChange={(event) => (handleChangeValue(event))}
                         />
@@ -169,6 +191,7 @@ function App() {
                           oninvalid="this.setCustomValidity('Campo requerido')"
                           phx-debounce="250"
                           placeholder=""
+                          ref={inputCorreo}
                           required
                           type="email"
                           onChange={(event) => (handleChangeValue(event))}
@@ -197,6 +220,7 @@ function App() {
                           phx-debounce="250"
                           placeholder=""
                           required
+                          ref={inputPassword}
                           type="password"
                           onChange={(event) => (handleChangeValue(event))}
                         />
