@@ -51,6 +51,8 @@ function App() {
   const handleSubmit = () => {
     router.push('/contract/form1')
     console.log('voy a enviar el siguiente registro al backend')
+    const inputNombre = useRef()
+    console.log(inputNombre.current)
   }
   return (
     <main className="flex flex-col justify-between min-h-screen">
@@ -102,6 +104,7 @@ function App() {
                           phx-debounce="250"
                           placeholder=""
                           required
+                          ref={inputNombre}
                           type="text"
                           onChange={(event) => (handleChangeValue(event))}
                         />
