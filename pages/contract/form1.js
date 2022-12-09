@@ -46,7 +46,7 @@ const ContractForm1 = () => {
   })
 
   const handleChangeValue = (event) => {
-    console.log(event.target)
+    console.log(event.target.value)
     setForm({
       ...form,
       [event.target.name]: event.target.value,
@@ -175,6 +175,7 @@ const ContractForm1 = () => {
                           placeholder=""
                           required=""
                           type="text"
+                          onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
                     </div>
