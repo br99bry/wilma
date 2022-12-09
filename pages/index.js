@@ -55,7 +55,6 @@ function App() {
   const handleSubmit = () => {
     router.push('/contract/form1')
     console.log('voy a enviar el siguiente registro al backend')
-    validacion();
     
   }
   return (
