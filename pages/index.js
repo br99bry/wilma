@@ -53,10 +53,9 @@ function App() {
   }
 
   const handleSubmit = () => {
-    router.push('/contract/form1')
-    console.log('voy a enviar el siguiente registro al backend')
+    router.push('/contract/form1');
+    console.log('voy a enviar el siguiente registro al backend');
     validar();
-    
   }
   return (
     <main className="flex flex-col justify-between min-h-screen">
