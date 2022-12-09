@@ -5,12 +5,8 @@ const ContractForm3 = () => {
   const router = useRouter()
 
   const [form, setForm] = useState({
-    nombre: '',
-    domicilio: '',
-    rfc: '',
-    indemnizacion: '',
-    ciudad_interes: '',
-    valor_activos: '',
+    ingresos_facturacion: '',
+
   })
 
   const handleChangeValue = (event) => {
@@ -85,7 +81,7 @@ const ContractForm3 = () => {
                       <div className="flex items-center justify-between -mx-1 w-full">
                         <input
                           id="life_policy_application_data_gender"
-                          name="ingresos_facturacion"
+                          name="ingresos"
                           type="hidden"
                           value=""
                         />
@@ -93,7 +89,7 @@ const ContractForm3 = () => {
                           <input
                             className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                             id="gender_radio_input_gastos_yes"
-                            name="life_policy_application[data][ingresos]"
+                            name="ingresos_facturacion"
                             required=""
                             type="radio"
                             value="si"
@@ -105,7 +101,7 @@ const ContractForm3 = () => {
                           <input
                             className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                             id="gender_radio_input_utilidades_no"
-                            name="life_policy_application[data][ingresos]"
+                            name="ingresos_facturacion"
                             required=""
                             type="radio"
                             value="no"
@@ -128,7 +124,7 @@ const ContractForm3 = () => {
                       <div className="flex items-center justify-between -mx-1 w-full">
                         <input
                           id="life_policy_application_data_gender"
-                          name="empleados"
+                          name=""
                           type="hidden"
                           value=""
                         />
@@ -136,7 +132,7 @@ const ContractForm3 = () => {
                           <input
                             className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                             id="gender_radio_input_empleados_yes"
-                            name="life_policy_application[data][empleados]"
+                            name="empleados"
                             required=""
                             type="radio"
                             value="si"
@@ -147,7 +143,7 @@ const ContractForm3 = () => {
                           <input
                             className="form-radio mr-2 border-2 border-v3-super-gray-400 text-v2-super-pink-500 ring-current ring-offset-current focus:ring-current "
                             id="gender_radio_input_empleados_no"
-                            name="life_policy_application[data][empleados]"
+                            name="empleados"
                             required=""
                             type="radio"
                             value="no"
