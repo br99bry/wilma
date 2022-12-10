@@ -52,8 +52,9 @@ function App() {
   const inputWhatsapp = useRef()
   const inputCorreo = useRef()
   const inputPassword = useRef()
+  const tyc = useRef()
   const validacion = () =>{
-    if(inputNombre.current.value === "" || inputWhatsapp.current.value === "" || inputCorreo.current.value === "" || inputPassword.current.value === "" || numerOfStoriesSelectInput.current.options.selectedIndex === 0){
+    if(inputNombre.current.value === "" || inputWhatsapp.current.value === "" || inputCorreo.current.value === "" || inputPassword.current.value === "" || numerOfStoriesSelectInput.current.options.selectedIndex === 0 || tyc.current.checked == false){
       console.log("vacio")
     }else{
       console.log("texto")
@@ -340,6 +341,7 @@ function App() {
                           required=""
                           type="checkbox"
                           value="true"
+                          ref={tyc}
                         />
                         <label
                           for="term_conditions_checkbox_input"
