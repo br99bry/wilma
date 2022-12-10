@@ -222,6 +222,8 @@ const ContractForm2 = () => {
                             phx-debounce="250"
                             required=""
                             ref={inmuebleValor}
+                            onChange={(event) => (handleChangeValue(event))}
+
                           >
                             <option value="" selected="">
                               Seleccionar Valor
