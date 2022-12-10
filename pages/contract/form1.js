@@ -103,7 +103,6 @@ const ContractForm1 = () => {
   }
 
   const handleSubmit = () => {
-    router.push('/contract/form3')
     console.log('voy a enviar el siguiente registro al backend')
     validacion();
   }
