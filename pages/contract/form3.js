@@ -18,7 +18,7 @@ const ContractForm3 = () => {
   const handleChangeEmpleados = (event) =>{
     setForm({
       ...form,
-      empleados: event-target.value
+      empleados: event.target.value
     })
   }
 
