@@ -66,6 +66,7 @@ function App() {
 
   const handleSubmit = () => {
     console.log('voy a enviar el siguiente registro al backend')
+    validacion();
     fetch('http://137.184.7.90:1337/api/records', {
       method: 'POST',
       headers: {
