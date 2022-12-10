@@ -71,10 +71,10 @@ const ContractForm1 = () => {
   const selectCiudad = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    console.log(inputNombreFiscal.current)
-    console.log(inputDom.current)
-    console.log(inputCorreoFiscal.current)
-    console.log(inputRFC.current)
+    console.log(inputNombreFiscal.current.value)
+    console.log(inputDom.current.value)
+    console.log(inputCorreoFiscal.current.value)
+    console.log(inputRFC.current.value)
     console.log(numberOfMemberSelectInput.current.options.selectedIndex)
     console.log(selectIndemnizacion.current.options.selectedIndex)
     console.log(selectCiudad.current.options.selectedIndex)
@@ -155,6 +155,7 @@ const ContractForm1 = () => {
                           placeholder=""
                           required=""
                           type="text"
+                          ref={inputNombreFiscal}
                           onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
@@ -180,6 +181,7 @@ const ContractForm1 = () => {
                           placeholder=""
                           required=""
                           type="text"
+                          ref={inputDom}
                           onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
@@ -207,6 +209,7 @@ const ContractForm1 = () => {
                           placeholder=""
                           required=""
                           type="text"
+                          ref={inputCorreoFiscal}
                           onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
@@ -233,6 +236,7 @@ const ContractForm1 = () => {
                           phx-debounce="250"
                           required=""
                           type="text"
+                          ref={inputRFC}
                           onChange={(event) => (handleChangeValue(event))}
                         />
                       </div>
