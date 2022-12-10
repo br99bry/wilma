@@ -20,7 +20,7 @@ const ContractForm3 = () => {
         const ciudad_valor = dataJson.data.attributes.ciudad_interes;
         const membresia_valor = dataJson.data.attributes.membresia;
         const indemnizacion_valor = dataJson.data.attributes.indemnizacion;
-        const indemnizacionCustom_valor = dataJson.data.attributes.indemnizacionCustom;
+        const indemnizacionCustom_valor = '$' + dataJson.data.attributes.indemnizacionCustom;
         console.log(indemnizacionCustom_valor);
         if(ciudad_valor == 1){
           ciudad.current.value = "Riviera Nayarit";
@@ -47,7 +47,7 @@ const ContractForm3 = () => {
         if(dataJson.data.attributes.membresia !== 4){
           costo.current.value = dataJson.data.attributes.indemnizacion;
         }else if(dataJson.data.attributes.membresia == 4){
-          costo.current.value = '$' + dataJson.data.attributes.indemnizacionCustom;
+          costo.current.value = indemnizacionCustom_valor;
         }
     });
 
