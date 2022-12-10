@@ -14,7 +14,7 @@ const ContractForm3 = () => {
   fetch(`http://137.184.7.90:1337/api/records/${id}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log('Success:', data.attributes);
+      console.log('Success:', data);
     });
 
   localStorage.removeItem('idUser')
