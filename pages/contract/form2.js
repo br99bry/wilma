@@ -84,7 +84,7 @@ const ContractForm2 = () => {
       .catch((error) => {
         console.error('Error:', error);
       });
-      /* router.push('/contract/form3')   */
+      router.push('/contract/form3')  
     }
   }
 

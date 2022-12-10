@@ -6,13 +6,19 @@ const ContractForm3 = () => {
 
   const [form, setForm] = useState({
     ingresos_facturacion: '',
-
+    empleados: ""
   })
 
-  const handleChangeValue = (event) => {
+  const handleChangeButtonIngresos = (event) =>{
+    setForm({
+      ...form, 
+      ingresos_facturacion: event.target.value
+    })
+  }
+  const handleChangeEmpleados = (event) =>{
     setForm({
       ...form,
-      [event.target.name]: event.target.value,
+      empleados: event-target.value
     })
   }
 
@@ -93,7 +99,10 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="si"
-                            onClick={(event) => (ingresosType(event))}
+                            onClick={(event) =>  {
+                              ingresosType(event);
+                              handleChangeButtonIngresos(event)
+                            }}
                           />
                           <span className="inline-block w-full text-lg">Si</span>
                         </label>
@@ -105,7 +114,10 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="no"
-                            onClick={(event) => (ingresosType(event))}
+                            onClick={(event) =>  {
+                              ingresosType(event);
+                              handleChangeButtonIngresos(event)
+                            }}
                           />
                           <span className="inline-block w-full text-lg">No</span>
                         </label>
@@ -136,6 +148,9 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="si"
+                            onClick={(event) =>  {
+                              handleChangeEmpleados(event)
+                            }}
                           />
                           <span className="inline-block w-full text-lg">Si</span>
                         </label>
@@ -147,6 +162,9 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="no"
+                            onClick={(event) =>  {
+                              handleChangeEmpleados(event)
+                            }}
                           />
                           <span className="inline-block w-full text-lg">No</span>
                         </label>
