@@ -3,20 +3,23 @@ import { useRouter } from 'next/router';
 
 const ContractForm3 = () => {
   const router = useRouter()
-  
 
-  console.log('voy a enviar el siguiente registro al backend')
-  const id = localStorage.getItem('idUser')
-  fetch(`http://137.184.7.90:1337/api/records/${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  const handleSubmit = () => {
+    
 
-localStorage.removeItem('idUser')
+    console.log('voy a enviar el siguiente registro al backend')
+    const id = localStorage.getItem('idUser')
+    fetch(`http://137.184.7.90:1337/api/records/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
+  localStorage.removeItem('idUser')
+  }
 
   return (
     <main className="flex flex-col justify-between min-h-screen">
