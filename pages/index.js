@@ -66,7 +66,6 @@ function App() {
 
   const handleSubmit = () => {
     console.log('voy a enviar el siguiente registro al backend')
-    validacion();
     fetch('http://137.184.7.90:1337/api/records', {
       method: 'POST',
       headers: {
@@ -74,13 +73,10 @@ function App() {
       },
       body: JSON.stringify({ data: form }),
     })
-      .then((response) => {
-        response.json();
-      })
+      .then((response) => response.json())
       .then((dataJson) => {
         console.log('Success:', dataJson);
         localStorage.setItem('idUser', dataJson.data.id)
-
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -363,14 +359,14 @@ function App() {
                     >
                       Continuar{" "}
                     </button>
+                  </div>
                     <span
-                        className="help-block text-red-600 text-sm h-4 text-red-600 text-xs h-4 ocultar"
+                        className="flex justify-center pt-20 help-block text-red-600 text-sm h-4 text-red-600 text-xs h-4 ocultar"
                         phx-feedback-for="home_policy_application_data_term_conditions"
                         ref={inputValidacion}
                       >
                         Debe llenar todos los campos
                       </span>
-                  </div>
                 </div>
               </form>
             </section>
