@@ -10,14 +10,14 @@ const ContractForm3 = () => {
   })
 
   const handleChangeButtonIngresos = (event) =>{
-    console.log('ingresos', event.target.event)
+    console.log('ingresos', event.target.value)
     setForm({
       ...form, 
       ingresos_facturacion: event.target.value
     })
   }
   const handleChangeEmpleados = (event) =>{
-    console.log('empleados', event.target.event)
+    console.log('empleados', event.target.value)
     setForm({
       ...form,
       empleados: event.target.value
