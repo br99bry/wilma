@@ -7,7 +7,7 @@ const ContractForm3 = () => {
   const informacion = useRef();
 
   const handleSubmit = () => {
-    informacion.current.className.remove('ocultar')
+    informacion.current.classList.remove('ocultar')
   const id = localStorage.getItem('idUser')
   fetch(`http://137.184.7.90:1337/api/records/${id}`)
     .then((response) => response.json())
