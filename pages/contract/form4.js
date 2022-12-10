@@ -21,6 +21,7 @@ const ContractForm3 = () => {
         const membresia_valor = dataJson.data.attributes.membresia;
         const indemnizacion_valor = dataJson.data.attributes.indemnizacion;
         const indemnizacionCustom_valor = dataJson.data.attributes.indemnizacionCustom;
+        console.log(indemnizacionCustom_valor);
         if(ciudad_valor == 1){
           ciudad.current.value = "Riviera Nayarit";
         }else if(ciudad_valor == 2){
