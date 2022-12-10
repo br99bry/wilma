@@ -38,11 +38,6 @@ const ContractForm3 = () => {
   const confirm = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    console.log('ingresos si', ingresos_si.current.checked)
-    console.log('ingresos no', ingresos_no.current.checked)
-    console.log('empleados si', empleados_si.current.checked)
-    console.log('empleados no', empleados_no.current.checked)
-    console.log('confirm', confirm.current.checked)
     if(ingresos_si.current.checked == false && ingresos_no.current.checked == false || empleados_no.current.checked == false && empleados_si.current.checked == false || confirm.current.checked == false || inputValidacion.current.checked == false){
       inputValidacion.current.classList.remove('ocultar');
     }else{
@@ -63,7 +58,7 @@ const ContractForm3 = () => {
         .catch((error) => {
           console.error('Error:', error);
         });
-      /* router.push('/contract/form4')   */
+      router.push('/contract/form4')  
     }
   }
 
