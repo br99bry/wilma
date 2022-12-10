@@ -59,8 +59,8 @@ const ContractForm2 = () => {
   const inmuebleValor = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    console.log(valorEstimado)
-    console.log(local)
+    console.log(valorEstimado.current.value)
+    console.log(local.current.value)
     console.log(inmuebleValor)
     if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" ){
       inputValidacion.current.classList.remove('ocultar');
@@ -338,6 +338,13 @@ const ContractForm2 = () => {
                       <i className="px-2 far fa-arrow-right" aria-hidden="true"></i>
                     </button>
                   </div>
+                    <span
+                        className="flex justify-center pt-20 help-block text-red-600 text-sm h-4 text-red-600 text-xs h-4 ocultar"
+                        phx-feedback-for="home_policy_application_data_term_conditions"
+                        ref={inputValidacion}
+                      >
+                        Debe llenar todos los campos
+                      </span>
                 </div>
               </form>
             </section>
