@@ -20,6 +20,7 @@ const ContractForm3 = () => {
 
   localStorage.removeItem('idUser')
   }
+  handleSubmit();
 
   return (
     <main className="flex flex-col justify-between min-h-screen">
