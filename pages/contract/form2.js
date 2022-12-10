@@ -61,8 +61,8 @@ const ContractForm2 = () => {
   const validacion = () =>{
     console.log(valorEstimado.current.value)
     console.log(local.current.value)
-    console.log(inmuebleValor)
-    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" ){
+    console.log(inmuebleValor.current.value)
+    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" || local.current.value === ""){
       inputValidacion.current.classList.remove('ocultar');
     }else{
       console.log("texto")
