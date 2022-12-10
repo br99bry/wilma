@@ -13,11 +13,11 @@ const ContractForm3 = () => {
   const id = localStorage.getItem('idUser')
   fetch(`http://137.184.7.90:1337/api/records/${id}`)
     .then((response) => response.json())
-    .then((data) => {
-      console.log('Ciudad:', data.ciudad_interes);
-      console.log('Membresia:', data.membresia);
-      console.log('indemnizacion:', data.indemnizacion);
-      console.log('indemnizacionCustom:', data.indemnizacionCustom);
+    .then((dataJson) => {
+      console.log('Ciudad:', dataJson.data.ciudad_interes);
+      console.log('Membresia:', dataJson.data.membresia);
+      console.log('indemnizacion:', dataJson.data.indemnizacion);
+      console.log('indemnizacionCustom:', dataJson.data.indemnizacionCustom);
     });
 
   localStorage.removeItem('idUser')
