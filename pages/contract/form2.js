@@ -64,7 +64,7 @@ const ContractForm2 = () => {
   const valor_gastos = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" || local.current.value === "" || local_propio.current.checked == false && local_arrendado.current.checked == false || cobertura_gastos.current.checked == false && cobertura_utilidades.current.checked == false || valor_gastos.current.value === ""){
+    if(valorEstimado.current.value === "" || local.current.value === "" || local_propio.current.checked == false && local_arrendado.current.checked == false || cobertura_gastos.current.checked == false && cobertura_utilidades.current.checked == false || valor_gastos.current.value === ""){
       inputValidacion.current.classList.remove('ocultar');
     }else{
       console.log("texto")
