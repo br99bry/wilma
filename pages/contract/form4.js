@@ -10,14 +10,24 @@ const ContractForm3 = () => {
   const handleSubmit = () => {
     informacion.current.classList.remove('ocultar')
     boton.current.classList.add('ocultar')
-  const id = localStorage.getItem('idUser')
-  fetch(`http://137.184.7.90:1337/api/records/${id}`)
-    .then((response) => response.json())
-    .then((dataJson) => {
-      console.log('Ciudad:', dataJson.data.attributes.ciudad_interes);
-      console.log('Membresia:', dataJson.data.attributes.membresia);
-      console.log('indemnizacion:', dataJson.data.attributes.indemnizacion);
-      console.log('indemnizacionCustom:', dataJson.data.attributes.indemnizacionCustom);
+    const id = localStorage.getItem('idUser')
+    const ciudad = useRef()
+    const membresia = useRef()
+    const costo = useRef()
+    fetch(`http://137.184.7.90:1337/api/records/${id}`)
+      .then((response) => response.json())
+      .then((dataJson) => {
+        console.log('Ciudad:', dataJson.data.attributes.ciudad_interes);
+        console.log('Membresia:', dataJson.data.attributes.membresia);
+        console.log('indemnizacion:', dataJson.data.attributes.indemnizacion);
+        console.log('indemnizacionCustom:', dataJson.data.attributes.indemnizacionCustom);
+        ciudad.current.value = dataJson.data.attributes.ciudad_interes;
+        membresia.current.value = dataJson.data.attributes.membresia;
+        if(dataJson.data.attributes.membresia !== 4){
+          costo.current.value = dataJson.data.attributes.indemnizacion;
+        }else if(dataJson.data.attributes.membresia == 4){
+          costo.current.value = '$' + dataJson.data.attributes.indemnizacionCustom;
+        }
     });
 
   localStorage.removeItem('idUser')
@@ -87,6 +97,7 @@ const ContractForm3 = () => {
                             required=""
                             type="text"
                             disabled
+                            ref={ciudad}
                           />
                         </label>
                       </div>
@@ -110,6 +121,7 @@ const ContractForm3 = () => {
                             required=""
                             type="text"
                             disabled
+                            ref={membresia}
                           />
                         </label>
                       </div>
@@ -133,6 +145,7 @@ const ContractForm3 = () => {
                             required=""
                             type="text"
                             disabled
+                            ref={costo}
                           />
                         </label>
                       </div>
