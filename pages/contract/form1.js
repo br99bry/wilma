@@ -91,10 +91,6 @@ const ContractForm1 = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Success:', data);
-        localStorage.setItem('ciudad', data.data.attributes.ciudad_interes)
-        localStorage.setItem('membresia', data.data.attributes.membresia)
-        localStorage.setItem('indemnizacion', data.data.attributes.indemnizacion)
-        localStorage.setItem('indemnizacionCuston', data.data.attributes.indemnizacionCustom)
       })
       .catch((error) => {
         console.error('Error:', error);

@@ -1,15 +1,6 @@
 import { useState, useRef } from "react";
-import { useRouter } from 'next/router';
 
 const ContractForm3 = () => {
-  const [form, setForm] = useState({
-    nombre: '',
-    domicilio: '',
-    rfc: '',
-    indemnizacion: '',
-    ciudad_interes: '',
-    valor_activos: '',
-  })
 
 
 
