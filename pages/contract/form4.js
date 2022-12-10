@@ -6,14 +6,14 @@ const ContractForm3 = () => {
 
   const informacion = useRef();
   const boton = useRef()
+  const ciudad = useRef()
+  const membresia = useRef()
+  const costo = useRef()
 
   const handleSubmit = () => {
     informacion.current.classList.remove('ocultar')
     boton.current.classList.add('ocultar')
     const id = localStorage.getItem('idUser')
-    const ciudad = useRef()
-    const membresia = useRef()
-    const costo = useRef()
     fetch(`http://137.184.7.90:1337/api/records/${id}`)
       .then((response) => response.json())
       .then((dataJson) => {
