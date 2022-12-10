@@ -69,10 +69,9 @@ const ContractForm1 = () => {
   const inputCorreoFiscal = useRef()
   const inputRFC = useRef()
   const selectCiudad = useRef()
-  const tyc = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    if(inputNombreFiscal.current.value === "" || inputDom.current.value === "" || inputCorreoFiscal.current.value === "" || inputRFC.current.value === "" || numberOfMemberSelectInput.current.options.selectedIndex === 0 || selectIndemnizacion.current.options.selectedIndex === 0 || selectCiudad.current.options.selectedIndex === 0 || tyc.current.checked == false){
+    if(inputNombreFiscal.current.value === "" || inputDom.current.value === "" || inputCorreoFiscal.current.value === "" || inputRFC.current.value === "" || numberOfMemberSelectInput.current.options.selectedIndex === 0 || selectIndemnizacion.current.options.selectedIndex === 0 || selectCiudad.current.options.selectedIndex === 0){
       inputValidacion.current.classList.remove('ocultar');
     }else{
       console.log("texto")
@@ -99,10 +98,8 @@ const ContractForm1 = () => {
   const handleSubmit = () => {
     router.push('/contract/form3')
     console.log('voy a enviar el siguiente registro al backend')
-    validacion()
+    validacion();
   }
-
-  
 
   return (
     <main className="flex flex-col justify-between min-h-screen">
