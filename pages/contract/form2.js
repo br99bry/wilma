@@ -62,7 +62,7 @@ const ContractForm2 = () => {
     console.log(valorEstimado)
     console.log(local)
     console.log(inmuebleValor)
-    if(valorEstimado.current.value === "" ){
+    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" ){
       inputValidacion.current.classList.remove('ocultar');
     }else{
       console.log("texto")
@@ -82,7 +82,7 @@ const ContractForm2 = () => {
       .catch((error) => {
         console.error('Error:', error);
       });
-      router.push('/contract/form2')  
+      /* router.push('/contract/form3')   */
     }
   }
 
