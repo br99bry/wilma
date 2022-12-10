@@ -57,12 +57,16 @@ const ContractForm2 = () => {
 
   const valorEstimado = useRef()
   const inmuebleValor = useRef()
+  const local_propio = useRef()
+  const local_arrendado = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    console.log(valorEstimado.current.value)
-    console.log(local.current.value)
-    console.log(inmuebleValor.current.value)
-    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" || local.current.value === ""){
+    console.log("calor estimado", valorEstimado.current.value)
+    console.log("local", local.current.value)
+    console.log("inmueble valor", inmuebleValor.current.value)
+    console.log("propio", local_propio.current.checked)
+    console.log("arrendado", local_arrendado.current.checked)
+    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" || local.current.value === "" || local_propio.current.checked == false && local_arrendado.current.checked == false){
       inputValidacion.current.classList.remove('ocultar');
     }else{
       console.log("texto")
@@ -170,6 +174,7 @@ const ContractForm2 = () => {
                             required=""
                             type="radio"
                             value="propio"
+                            ref={local_propio}
                             onClick={(event) =>  {
                               localType(event);
                               handleChangeButtonLocal(event)
@@ -184,6 +189,7 @@ const ContractForm2 = () => {
                             name="tipo_local"
                             required=""
                             type="radio"
+                            ref={local_arrendado}
                             value="arrendado"
                             onClick={(event) =>  {
                               localType(event);
