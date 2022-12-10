@@ -5,9 +5,11 @@ const ContractForm3 = () => {
   const router = useRouter()
 
   const informacion = useRef();
+  const boton = useRef
 
   const handleSubmit = () => {
     informacion.current.classList.remove('ocultar')
+    boton.current.classList.add('ocultar')
   const id = localStorage.getItem('idUser')
   fetch(`http://137.184.7.90:1337/api/records/${id}`)
     .then((response) => response.json())
@@ -51,7 +53,7 @@ const ContractForm3 = () => {
                     <strong className="text-new-super-purple"> febrero 2023 </strong>para que puedas terminar tu contratación
                     </h2>
                   </div>
-                  <div className="flex justify-center pt-20">
+                  <div className="flex justify-center pt-20" ref={boton}>
                     <button
                       className="h-18 bg-v2-super-pink-500 px-16 py-4 rounded-full text-white w-full flex justify-center items-center bg-pink-500 text-2xl font-medium hover:bg-pink-800 w-full md:w-auto"
                       phx-disable-with="..."
