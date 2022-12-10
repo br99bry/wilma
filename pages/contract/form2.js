@@ -59,6 +59,9 @@ const ContractForm2 = () => {
   const inmuebleValor = useRef()
   const local_propio = useRef()
   const local_arrendado = useRef()
+  const cobertura_gastos = useRef()
+  const cobertura_utilidades = useRef()
+  const valor_gastos = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
     console.log("calor estimado", valorEstimado.current.value)
@@ -66,7 +69,10 @@ const ContractForm2 = () => {
     console.log("inmueble valor", inmuebleValor.current.value)
     console.log("propio", local_propio.current.checked)
     console.log("arrendado", local_arrendado.current.checked)
-    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" || local.current.value === "" || local_propio.current.checked == false && local_arrendado.current.checked == false){
+    console.log("gastos", cobertura_gastos.current.checked)
+    console.log("utilidades", cobertura_utilidades.current.checked)
+    console.log("valor_gastos", valor_gastos.current.value)
+    if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" || local.current.value === "" || local_propio.current.checked == false && local_arrendado.current.checked == false || cobertura_gastos.current.checked == false && cobertura_utilidades.current.checked == false){
       inputValidacion.current.classList.remove('ocultar');
     }else{
       console.log("texto")
@@ -260,6 +266,7 @@ const ContractForm2 = () => {
                           required=""
                           type="radio"
                           value="gastos"
+                          ref={cobertura_gastos}
                           onClick={(event) => {
                             coberturaType(event);
                             handleChangeButtonLocal(event)
@@ -277,6 +284,7 @@ const ContractForm2 = () => {
                             required=""
                             type="radio"
                             value="utilidades"
+                            ref={cobertura_utilidades}
                             onClick={(event) => {
                               coberturaType(event);
                               handleChangeButtonGastos(event)
@@ -315,6 +323,7 @@ const ContractForm2 = () => {
                             name="valor_gastos_utilidades"
                             phx-debounce="250"
                             required=""
+                            ref={valor_gastos}
                             onChange={(event) => (handleChangeValue(event))}
                           >
                             <option value="" selected="">
