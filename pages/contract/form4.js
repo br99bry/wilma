@@ -17,12 +17,32 @@ const ContractForm3 = () => {
     fetch(`http://137.184.7.90:1337/api/records/${id}`)
       .then((response) => response.json())
       .then((dataJson) => {
-        console.log('Ciudad:', dataJson.data.attributes.ciudad_interes);
-        console.log('Membresia:', dataJson.data.attributes.membresia);
-        console.log('indemnizacion:', dataJson.data.attributes.indemnizacion);
-        console.log('indemnizacionCustom:', dataJson.data.attributes.indemnizacionCustom);
-        ciudad.current.value = dataJson.data.attributes.ciudad_interes;
-        membresia.current.value = dataJson.data.attributes.membresia;
+        const ciudad_valor = dataJson.data.attributes.ciudad_interes;
+        const membresia_valor = dataJson.data.attributes.membresia;
+        const indemnizacion_valor = dataJson.data.attributes.indemnizacion;
+        const indemnizacionCustom_valor = dataJson.data.attributes.indemnizacionCustom;
+        if(ciudad_valor == 1){
+          ciudad.current.value = "Riviera Nayarit";
+        }else if(ciudad_valor == 2){
+          ciudad.current.value = "Los Cabos";
+        }else if(ciudad_valor == 3){
+          ciudad.current.value = "Cozumel";
+        }else if(ciudad_valor == 4){
+          ciudad.current.value = "Cancún";
+        }else if(ciudad_valor == 5){
+          ciudad.current.value = "Playa del Carmen";
+        }else if(ciudad_valor == 6){
+          ciudad.current.value = "Tulum";
+        };
+        if(membresia_valor == 1){
+          membresia.current.value = "Sandy";
+        }else if(membresia_valor == 2){
+          membresia.current.value = "Michelle";
+        }else if(membresia_valor == 3){
+          membresia.current.value = "Katrina";
+        }else if(membresia_valor == 4){
+          membresia.current.value = "Wilma";
+        }
         if(dataJson.data.attributes.membresia !== 4){
           costo.current.value = dataJson.data.attributes.indemnizacion;
         }else if(dataJson.data.attributes.membresia == 4){
