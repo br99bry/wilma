@@ -218,7 +218,7 @@ const ContractForm2 = () => {
                           <select
                             className="w-full p-2 border-none outline-none appearance-none focus:text-v2-super-gray-700 bg-transparent pr-8"
                             id="valor_inmueble_select_input"
-                            name="valor_inmueble"
+                            name="inmueble"
                             phx-debounce="250"
                             required=""
                             ref={inmuebleValor}
