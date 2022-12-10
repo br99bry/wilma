@@ -31,25 +31,46 @@ const ContractForm3 = () => {
     }
   }
 
+  const ingresos_si = useRef()
+  const ingresos_no = useRef()
+  const empleados_si = useRef()
+  const empleados_no = useRef()
+  const confirm = useRef()
+  const inputValidacion = useRef()
+  const validacion = () =>{
+    console.log('ingresos si', ingresos_si)
+    console.log('ingresos no', ingresos_no)
+    console.log('empleados si', empleados_si)
+    console.log('empleados no', empleados_no)
+    console.log('confirm', confirm)
+    if(ingresos_si.current.checked == false && ingresos_no.current.checked == false || empleados_no.current.checked == false && empleados_si.current.checked == false || confirm.current.checked == false || inputValidacion.current.checked == false){
+      inputValidacion.current.classList.remove('ocultar');
+    }else{
+      console.log("texto")
+      inputValidacion.current.classList.add('ocultar');
+      const id = localStorage.getItem('idUser')
+      fetch(`http://137.184.7.90:1337/api/records/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({data: form}),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      /* router.push('/contract/form4')   */
+    }
+  }
+
   const handleSubmit = () => {
     router.push('/contract/form4')
     console.log('voy a enviar el siguiente registro al backend')
-  const id = localStorage.getItem('idUser')
-  fetch(`http://137.184.7.90:1337/api/records/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({data: form}),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-
+    validacion();
   }
 
   return (
@@ -99,6 +120,7 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="si"
+                            ref={ingresos_si}
                             onClick={(event) =>  {
                               ingresosType(event);
                               handleChangeButtonIngresos(event)
@@ -114,6 +136,7 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="no"
+                            ref={ingresos_no}
                             onClick={(event) =>  {
                               ingresosType(event);
                               handleChangeButtonIngresos(event)
@@ -148,6 +171,7 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="si"
+                            ref={empleados_si}
                             onClick={(event) =>  {
                               handleChangeEmpleados(event)
                             }}
@@ -162,6 +186,7 @@ const ContractForm3 = () => {
                             required=""
                             type="radio"
                             value="no"
+                            ref={empleados_no}
                             onClick={(event) =>  {
                               handleChangeEmpleados(event)
                             }}
@@ -194,6 +219,7 @@ const ContractForm3 = () => {
                           required=""
                           type="checkbox"
                           value="true"
+                          ref={confirm}
                         />
                         <label
                           for="term_conditions_checkbox_input"
@@ -221,6 +247,13 @@ const ContractForm3 = () => {
                       <i className="px-2 far fa-arrow-right" aria-hidden="true"></i>
                     </button>
                   </div>
+                  <span
+                        className="flex justify-center pt-20 help-block text-red-600 text-sm h-4 text-red-600 text-xs h-4 ocultar"
+                        phx-feedback-for="home_policy_application_data_term_conditions"
+                        ref={inputValidacion}
+                      >
+                        Debe llenar todos los campos
+                      </span>
                 </div>
               </form>
             </section>
