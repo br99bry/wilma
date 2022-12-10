@@ -42,6 +42,14 @@ const ContractForm2 = () => {
     }
   }
 
+  const handleChangeButton = (event) =>{
+    console.log(event.target.value);
+    setForm({
+      ...form, 
+      tipo_local: event.target.value
+    })
+  }
+
 
   const handleSubmit = () => {
     router.push('/contract/form3')
@@ -142,7 +150,10 @@ const ContractForm2 = () => {
                             required=""
                             type="radio"
                             value="propio"
-                            onClick={(event) => (localType(event))}
+                            onClick={(event) =>  {
+                              localType(event);
+                              handleChangeButton(event)
+                            }}
                           />
                           <span className="inline-block w-full text-lg">Propio</span>
                         </label>
@@ -154,7 +165,10 @@ const ContractForm2 = () => {
                             required=""
                             type="radio"
                             value="arrendado"
-                            onClick={(event) => (localType(event))}
+                            onClick={(event) =>  {
+                              localType(event);
+                              handleChangeButton(event)
+                            }}
                           />
                           <span className="inline-block w-full text-lg">
                             Arrendado
