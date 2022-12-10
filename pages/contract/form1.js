@@ -71,13 +71,6 @@ const ContractForm1 = () => {
   const selectCiudad = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    console.log(inputNombreFiscal.current.value)
-    console.log(inputDom.current.value)
-    console.log(inputCorreoFiscal.current.value)
-    console.log(inputRFC.current.value)
-    console.log(numberOfMemberSelectInput.current.options.selectedIndex)
-    console.log(selectIndemnizacion.current.options.selectedIndex)
-    console.log(selectCiudad.current.options.selectedIndex)
     if(inputNombreFiscal.current.value === "" || inputDom.current.value === "" || inputCorreoFiscal.current.value === "" || inputRFC.current.value === "" || numberOfMemberSelectInput.current.options.selectedIndex === 0 || selectIndemnizacion.current.options.selectedIndex === 0 || selectCiudad.current.options.selectedIndex === 0){
       inputValidacion.current.classList.remove('ocultar');
     }else{
