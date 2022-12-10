@@ -2,19 +2,28 @@ import { useState, useRef } from "react";
 import { useRouter } from 'next/router';
 
 const ContractForm3 = () => {
-  const id = localStorage.getItem('idUser')
-  const ciudad = localStorage.getItem('ciudad')
-  const membresia = localStorage.getItem('membresia')
-  const indemnizacion = localStorage.getItem('indemnizacion')
-  const indemnizacionCustom = localStorage.getItem('indemnizacionCuston')
-  
-  console.log('id', id)
-  console.log('ciudad', ciudad)
-  console.log('membresia', membresia)
-  console.log('indemnizacion', indemnizacion)
-  console.log('indemnizacionCustom', indemnizacionCustom)
-  
-  
+  const [form, setForm] = useState({
+    nombre: '',
+    domicilio: '',
+    rfc: '',
+    indemnizacion: '',
+    ciudad_interes: '',
+    valor_activos: '',
+  })
+
+
+
+    console.log('voy a enviar el siguiente registro al backend')
+    const id = localStorage.getItem('idUser')
+    fetch(`http://137.184.7.90:1337/api/records/${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+
   localStorage.removeItem('idUser')
 
   return (
