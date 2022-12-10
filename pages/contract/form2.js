@@ -43,7 +43,6 @@ const ContractForm2 = () => {
   }
 
   const handleChangeButton = (event) =>{
-    console.log(event.target.value);
     setForm({
       ...form, 
       tipo_local: event.target.value
