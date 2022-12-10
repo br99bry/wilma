@@ -64,14 +64,6 @@ const ContractForm2 = () => {
   const valor_gastos = useRef()
   const inputValidacion = useRef()
   const validacion = () =>{
-    console.log("calor estimado", valorEstimado.current.value)
-    console.log("local", local.current.value)
-    console.log("inmueble valor", inmuebleValor.current.value)
-    console.log("propio", local_propio.current.checked)
-    console.log("arrendado", local_arrendado.current.checked)
-    console.log("gastos", cobertura_gastos.current.checked)
-    console.log("utilidades", cobertura_utilidades.current.checked)
-    console.log("valor_gastos", valor_gastos.current.value)
     if(valorEstimado.current.value === "" || inmuebleValor.current.value === "" || local.current.value === "" || local_propio.current.checked == false && local_arrendado.current.checked == false || cobertura_gastos.current.checked == false && cobertura_utilidades.current.checked == false || valor_gastos.current.value === ""){
       inputValidacion.current.classList.remove('ocultar');
     }else{
