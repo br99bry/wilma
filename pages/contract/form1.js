@@ -14,6 +14,10 @@ const ContractForm1 = () => {
     if (selectedOption == 4) {
       selectIndemnizacionCustom.current.classList.remove('ocultar')
       selectIndemnizacion.current.classList.add('ocultar')
+      setForm({
+        ...form, 
+        indemnizacion: ""
+      })
     } else if(selectedOption == 0){
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
@@ -91,7 +95,7 @@ const ContractForm1 = () => {
       .catch((error) => {
         console.error('Error:', error);
       });
-      /* router.push('/contract/form2')   */
+      router.push('/contract/form2')  
     }
   }
 
