@@ -53,16 +53,18 @@ function App() {
   const inputCorreo = useRef()
   const inputPassword = useRef()
   const tyc = useRef()
+  const inputValidacion = useRef()
   const validacion = () =>{
     if(inputNombre.current.value === "" || inputWhatsapp.current.value === "" || inputCorreo.current.value === "" || inputPassword.current.value === "" || numerOfStoriesSelectInput.current.options.selectedIndex === 0 || tyc.current.checked == false){
-      console.log("vacio")
+      inputValidacion.current.classList.remove('ocultar');
     }else{
       console.log("texto")
+      inputValidacion.current.classList.add('ocultar');
+      router.push('/contract/form1')  
     }
   }
 
   const handleSubmit = () => {
-    /* router.push('/contract/form1') */
     console.log('voy a enviar el siguiente registro al backend')
     validacion();
     fetch('http://137.184.7.90:1337/api/records', {
@@ -361,6 +363,13 @@ function App() {
                     >
                       Continuar{" "}
                     </button>
+                    <span
+                        className="help-block text-red-600 text-sm h-4 text-red-600 text-xs h-4 ocultar"
+                        phx-feedback-for="home_policy_application_data_term_conditions"
+                        ref={inputValidacion}
+                      >
+                        Debe llenar todos los campos
+                      </span>
                   </div>
                 </div>
               </form>
