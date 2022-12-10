@@ -5,7 +5,7 @@ const ContractForm3 = () => {
   const router = useRouter()
 
   const informacion = useRef();
-  const boton = useRef
+  const boton = useRef()
 
   const handleSubmit = () => {
     informacion.current.classList.remove('ocultar')
