@@ -22,14 +22,26 @@ const ContractForm1 = () => {
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
       selectIndemnizacion.current.options.selectedIndex = 1;
+      setForm({
+        ...form, 
+        indemnizacion: "$250,000"
+      })
     } else if(selectedOption == 2){
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
       selectIndemnizacion.current.options.selectedIndex = 2;
+      setForm({
+        ...form, 
+        indemnizacion: "$500,000"
+      })
     } else if(selectedOption == 3){
       selectIndemnizacionCustom.current.classList.add('ocultar')
       selectIndemnizacion.current.classList.remove('ocultar')
       selectIndemnizacion.current.options.selectedIndex = 3;
+      setForm({
+        ...form, 
+        indemnizacion: "$650,000"
+      })
     }
   }
 
@@ -52,24 +64,42 @@ const ContractForm1 = () => {
     })
   }
 
+  const inputNombreFiscal = useRef()
+  const inputDom = useRef()
+  const inputCorreoFiscal = useRef()
+  const inputRFC = useRef()
+  const selectCiudad = useRef()
+  const tyc = useRef()
+  const inputValidacion = useRef()
+  const validacion = () =>{
+    if(inputNombreFiscal.current.value === "" || inputDom.current.value === "" || inputCorreoFiscal.current.value === "" || inputRFC.current.value === "" || numberOfMemberSelectInput.current.options.selectedIndex === 0 || selectIndemnizacion.current.options.selectedIndex === 0 || selectCiudad.current.options.selectedIndex === 0 || tyc.current.checked == false){
+      inputValidacion.current.classList.remove('ocultar');
+    }else{
+      console.log("texto")
+      inputValidacion.current.classList.add('ocultar');
+      const id = localStorage.getItem('idUser')
+      fetch(`http://137.184.7.90:1337/api/records/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({data: form}),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+      router.push('/contract/form2')  
+    }
+  }
+
   const handleSubmit = () => {
     router.push('/contract/form3')
     console.log('voy a enviar el siguiente registro al backend')
-    const id = localStorage.getItem('idUser')
-    fetch(`http://137.184.7.90:1337/api/records/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({data: form}),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+    validacion()
   }
 
   
@@ -309,6 +339,7 @@ const ContractForm1 = () => {
                             name="ciudad_interes"
                             phx-debounce="250"
                             required=""
+                            ref={selectCiudad}
                             onChange={(event) => (handleChangeValue(event))}
                           >
                             <option value="" selected="">
@@ -340,6 +371,13 @@ const ContractForm1 = () => {
                       <i className="px-2 far fa-arrow-right" aria-hidden="true"></i>
                     </button>
                   </div>
+                    <span
+                        className="flex justify-center pt-20 help-block text-red-600 text-sm h-4 text-red-600 text-xs h-4 ocultar"
+                        phx-feedback-for="home_policy_application_data_term_conditions"
+                        ref={inputValidacion}
+                      >
+                        Debe llenar todos los campos
+                      </span>
                 </div>
               </form>
             </section>
