@@ -42,33 +42,53 @@ const ContractForm2 = () => {
     }
   }
 
-  const handleChangeButton = (event) =>{
+  const handleChangeButtonLocal = (event) =>{
     setForm({
       ...form, 
       tipo_local: event.target.value
     })
   }
+  const handleChangeButtonGastos = (event) =>{
+    setForm({
+      ...form, 
+      gastos_utilidades: event.target.value
+    })
+  }
 
+  const valorEstimado = useRef()
+  const inmuebleValor = useRef()
+  const inputValidacion = useRef()
+  const validacion = () =>{
+    console.log(valorEstimado)
+    console.log(local)
+    console.log(inmuebleValor)
+    if(valorEstimado.current.value === "" ){
+      inputValidacion.current.classList.remove('ocultar');
+    }else{
+      console.log("texto")
+      inputValidacion.current.classList.add('ocultar');
+      const id = localStorage.getItem('idUser')
+      fetch(`http://137.184.7.90:1337/api/records/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({data: form}),
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+      router.push('/contract/form2')  
+    }
+  }
 
   const handleSubmit = () => {
-    router.push('/contract/form3')
     console.log('voy a enviar el siguiente registro al backend')
-  const id = localStorage.getItem('idUser')
-  fetch(`http://137.184.7.90:1337/api/records/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({data: form}),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-
+    validacion();
   }
 
   return (
@@ -113,6 +133,7 @@ const ContractForm2 = () => {
                             name="valor_activos"
                             phx-debounce="250"
                             required=""
+                            ref={valorEstimado}
                             onChange={(event) => (handleChangeValue(event))}
                           >
                             <option value="" selected="">
@@ -151,7 +172,7 @@ const ContractForm2 = () => {
                             value="propio"
                             onClick={(event) =>  {
                               localType(event);
-                              handleChangeButton(event)
+                              handleChangeButtonLocal(event)
                             }}
                           />
                           <span className="inline-block w-full text-lg">Propio</span>
@@ -166,7 +187,7 @@ const ContractForm2 = () => {
                             value="arrendado"
                             onClick={(event) =>  {
                               localType(event);
-                              handleChangeButton(event)
+                              handleChangeButtonLocal(event)
                             }}
                           />
                           <span className="inline-block w-full text-lg">
@@ -196,6 +217,7 @@ const ContractForm2 = () => {
                             name="valor_inmueble"
                             phx-debounce="250"
                             required=""
+                            ref={inmuebleValor}
                           >
                             <option value="" selected="">
                               Seleccionar Valor
@@ -232,7 +254,10 @@ const ContractForm2 = () => {
                           required=""
                           type="radio"
                           value="gastos"
-                          onClick={(event) => (coberturaType(event))}
+                          onClick={(event) => {
+                            coberturaType(event);
+                            handleChangeButtonLocal(event)
+                          }}
                         />
                         <span className="inline-block w-full text-lg">
                           Gastos Fijos
@@ -246,7 +271,10 @@ const ContractForm2 = () => {
                             required=""
                             type="radio"
                             value="utilidades"
-                            onClick={(event) => (coberturaType(event))}
+                            onClick={(event) => {
+                              coberturaType(event);
+                              handleChangeButtonGastos(event)
+                            }}
                           />
                           <span className="inline-block w-full text-lg">
                             Utilidades antes de impuestos
@@ -281,6 +309,7 @@ const ContractForm2 = () => {
                             name="valor_gastos_utilidades"
                             phx-debounce="250"
                             required=""
+                            onChange={(event) => (handleChangeValue(event))}
                           >
                             <option value="" selected="">
                               Seleccionar Valor
