@@ -46,7 +46,7 @@ const ContractForm3 = () => {
         }
         if(dataJson.data.attributes.membresia !== 4){
           costo.current.value = dataJson.data.attributes.indemnizacion;
-        }else if(dataJson.data.attributes.membresia === 4){
+        }else{
           console.log(costo.current)
           costo.current.value = indemnizacionCustom_valor;
         }
