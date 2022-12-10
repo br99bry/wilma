@@ -3,47 +3,13 @@ import { useRouter } from 'next/router';
 
 const ContractForm3 = () => {
   const router = useRouter()
-  const [form, setForm] = useState({
-    nombre: '',
-    domicilio: '',
-    rfc: '',
-    indemnizacion: '',
-    ciudad_interes: '',
-    valor_activos: '',
-  })
-
-  const handleChangeValue = (event) => {
-    setForm({
-      ...form,
-      [event.target.name]: event.target.value,
-    })
-  }
-
-  const empleados = useRef();
-  const ingresosType = (value) => {
-    if(value.target._wrapperState.initialValue == "si"){
-      empleados.current.classList.remove('ocultar');
-    }else if(value.target._wrapperState.initialValue == "no"){
-      empleados.current.classList.add('ocultar');
-    }
-  }
 
   const handleSubmit = () => {
-    console.log('voy a enviar el siguiente registro al backend')
   const id = localStorage.getItem('idUser')
-  fetch(`http://137.184.7.90:1337/api/records/${id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({data: form}),
-  })
+  fetch(`http://137.184.7.90:1337/api/records/${id}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
+      console.log('Success:', data.attributes);
     });
 
   localStorage.removeItem('idUser')
